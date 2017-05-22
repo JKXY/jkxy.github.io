@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    <title>Android设计模式之单例模式 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="参考：https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple 模式的定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。 模式的使用场景确保某个类有且只有一个对象的场景，例如创建一个对象需要消耗的资源过">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android设计模式之单例模式">
+<meta property="og:url" content="http://yoursite.com/2017/05/22/Android设计模式之单例模式/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="参考：https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple 模式的定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。 模式的使用场景确保某个类有且只有一个对象的场景，例如创建一个对象需要消耗的资源过">
+<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/singleton-mr.simple-uml.png">
+<meta property="og:updated_time" content="2017-05-22T08:23:14.456Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android设计模式之单例模式">
+<meta name="twitter:description" content="参考：https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple 模式的定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。 模式的使用场景确保某个类有且只有一个对象的场景，例如创建一个对象需要消耗的资源过">
+<meta name="twitter:image" content="http://oqc1v7fbs.bkt.clouddn.com/singleton-mr.simple-uml.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/Archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/Tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android设计模式之单例模式</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android设计模式之单例模式</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-05-22T08:22:39.000Z" itemprop="datePublished" class="page-time">
+  2017-05-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模式的定义"><span class="post-toc-number">1.</span> <span class="post-toc-text">模式的定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#模式的使用场景"><span class="post-toc-number">2.</span> <span class="post-toc-text">模式的使用场景</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#UML类图"><span class="post-toc-number">3.</span> <span class="post-toc-text">UML类图</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#实现介绍"><span class="post-toc-number">4.</span> <span class="post-toc-text">实现介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式一："><span class="post-toc-number">5.</span> <span class="post-toc-text">方式一：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式二："><span class="post-toc-number">6.</span> <span class="post-toc-text">方式二：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式三："><span class="post-toc-number">7.</span> <span class="post-toc-text">方式三：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式四："><span class="post-toc-number">8.</span> <span class="post-toc-text">方式四：</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#方式五"><span class="post-toc-number">9.</span> <span class="post-toc-text">方式五 :</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Android设计模式之单例模式"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android设计模式之单例模式</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-05-22 16:22:39" datetime="2017-05-22T08:22:39.000Z"  itemprop="datePublished">2017-05-22</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>参考：<a href="https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple" target="_blank" rel="external">https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple</a></p>
+<h3 id="模式的定义"><a href="#模式的定义" class="headerlink" title="模式的定义"></a>模式的定义</h3><p>确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。</p>
+<h3 id="模式的使用场景"><a href="#模式的使用场景" class="headerlink" title="模式的使用场景"></a>模式的使用场景</h3><p>确保某个类有且只有一个对象的场景，例如创建一个对象需要消耗的资源过多，如要访问 IO 和数据库等资源。</p>
+<h3 id="UML类图"><a href="#UML类图" class="headerlink" title="UML类图"></a>UML类图</h3><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oqc1v7fbs.bkt.clouddn.com/singleton-mr.simple-uml.png" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="实现介绍"><a href="#实现介绍" class="headerlink" title="实现介绍"></a>实现介绍</h3><p>单例模式是设计模式中最简单的，只有一个单例类，没有其他的层次结构与抽象。该模式需要确保该类只能生成一个对象，通常是该类需要消耗太多的资源或者没有没有多个实例的理由。</p>
+<h3 id="方式一："><a href="#方式一：" class="headerlink" title="方式一："></a>方式一：</h3><pre><code>public class Singleton{
+
+    private static final Singleton  mSingleton  = new Singleton ();
+
+    public static Singleton  getSingleton() {
+        return mSingleton;
+    }
+}
+</code></pre><h3 id="方式二："><a href="#方式二：" class="headerlink" title="方式二："></a>方式二：</h3><pre><code>/**
+ *double-check， 避免并发时创建了多个实例, 该方式不能完全避免并发带来的破坏.
+ */    
+public class Singleton {
+    private static Sinleton mInstance = null;
+
+    public static Singleton getInstance(){
+        if(mInstance == null){
+            synchronized (Sinleton.class){
+                mInstance = new Singleton();
+            }
+        }
+        return mInstance;
+    }
+}
+</code></pre><h3 id="方式三："><a href="#方式三：" class="headerlink" title="方式三："></a>方式三：</h3><pre><code>public class Singleton {
+    /**
+     * 静态内部类
+     * 
+     * @author mrsimple
+     *
+     */
+    private static class SingletonHolder {
+        private static final Singleton mOnlyInstance = new Singleton();
+    }
+
+    /**
+     * 在第一次加载SingletonHolder时初始化一次mOnlyInstance对象, 保证唯一性, 也延迟了单例的实例化,
+     * 如果该单例比较耗资源可以使用这种模式.
+     * 
+     * @return
+     */
+    public static Singleton getInstanceFromHolder() {
+        return SingletonHolder.mOnlyInstance;
+    }
+}
+</code></pre><h3 id="方式四："><a href="#方式四：" class="headerlink" title="方式四："></a>方式四：</h3><pre><code>/**
+  *  方式四 : 枚举单例, 线程安全
+  */
+public class Singleton {
+    enum SingletonEnum{
+        INSTANCE;
+    }
+}
+</code></pre><h3 id="方式五"><a href="#方式五" class="headerlink" title="方式五 :"></a>方式五 :</h3><pre><code>public class Singleton {
+    /**
+     * 方式五 : 注册到容器, 根据key获取对象.一般都会有多种相同属性类型的对象会注册到一个map中
+     * instance容器
+     */
+    private static Map&lt;string singleton=&quot;&quot;&gt; objMap = new HashMap&lt;string singleton=&quot;&quot;&gt;();
+    /**
+     * 注册对象到map中
+     * @param key
+     * @param instance
+     */
+    public static void registerService(String key, Singleton instance) {
+        if (!objMap.containsKey(key) ) {
+            objMap.put(key, instance) ;
+        }
+    }
+
+    /**
+     * 根据key获取对象
+     * @param key
+     * @return
+     */
+    public static Singleton getService(String key) {
+        return objMap.get(key) ;
+    }
+}
+</code></pre><p>不管以哪种形式实现单例模式，它们的核心原理都是将构造函数私有化，并且通过静态方法获取一个唯一的实例，在这个获取的过程中你必须保证线程安全、反序列化导致重新生成实例对象等问题，该模式简单，但使用率较高。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-05-22T08:23:14.456Z" itemprop="dateUpdated">2017-05-22 16:23:14</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/05/22/Android设计模式之单例模式/" target="_blank" rel="external">http://yoursite.com/2017/05/22/Android设计模式之单例模式/</a>
+        
+    </div>
+    <footer>
+        <a href="http://yoursite.com">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&title=《Android设计模式之单例模式》 — JKXY Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&title=《Android设计模式之单例模式》 — JKXY Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/22/Android设计模式之单例模式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android设计模式之单例模式》 — JKXY Blog&url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/05/22/诞生日记/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">诞生日记</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢您的支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&title=《Android设计模式之单例模式》 — JKXY Blog&pic=http://yoursite.com/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&title=《Android设计模式之单例模式》 — JKXY Blog&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2017/05/22/Android设计模式之单例模式/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android设计模式之单例模式》 — JKXY Blog&url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/&via=http://yoursite.com" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://yoursite.com/2017/05/22/Android设计模式之单例模式/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aQU7EMAwFUO5/aZBYsaCdbzsuI/S6Go1Km5eRkvDtj4/4+vy+rj7//Obq+6t77v/q/v5jFx4eHl5r6FfX1T33jPvpSCYxmaz7MePh4eFt86qbwRxzP3HJtEYThIeHh/envGSrqB6a80Hj4eHh/Vde9eCbg/Hw8PDejZcMIlnuq3f2guCVrAUPDw8v5s0LYM9/frS+h4eHhxcv072SWDIp1ZC3N1o8PDy8DV7yiElJLGnP6jUKFOJdPDw8vDVeHjHkJa5qwFENNaJtBg8PD2+BlxfDqst9XvKvRrf5j4SHh4e3x+uVoPJDcPL8anRbmG48PDy8Bd48jOhtKtXpyNvC8PDw8PZ41WFVQ4FegDspj+Hh4eHt8Z4JEXrRRi90+KUzAg8PD+8ob5J2nlq+qwHxKMLAw8PDO8TrDXSSeVTbApJ3lTsj8PDw8I7y5q2iecCRPyGPd/Hw8PD2eL35SIbYm4hqq+uLkePh4eEt8HqAecNBXlR7qD8CDw8P7xCvV+hKlvV8S5hvNnh4eHhnedXjbD70aumr/AskGxgeHh7eMm8epCYRQyEymB/K8fDw8BZ4ebtVL1SdhAinohA8PDy8s7z8ob2lvBywFkOKF/fg4eHhPcLLG63mwWs+HfmRvdAZgYeHh9fiVQOFvFRWPUbnU1xtNcDDw8M7y6sW9ZNId95cNS+J4eHh4e3x5sPqxcH5JpGHINGdeHh4eGPe2baqfLLy7aQ6BZf7Hh4eHt4h3qTt6VShqxc0VNvF8PDw8M7yJm1VeXmsN+hJWQ4PDw9vm9drfqoewfNtptfmdbkx4OHh4b0BLz9ST1qp8oP44Y0BDw8P7xCvevDN2xHyg3g5ZcHDw8Nb41XDiN6RN39X/t4XoQkeHh7eAq/3r/7klb2lvxcZ4+Hh4R3lfQFabyIW+ZL7DQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
