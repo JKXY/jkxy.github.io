@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/">
+    
+    
+    <title>JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="undefined">
+    <meta name="description" content="JKXY的个人博客">
+<meta property="og:type" content="website">
+<meta property="og:title" content="JKXY Blog">
+<meta property="og:url" content="http://jkxy.club/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="JKXY的个人博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JKXY Blog">
+<meta name="twitter:description" content="JKXY的个人博客">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu"  >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">JKXY Blog</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header index-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">JKXY Blog</h1>
+        <h5 class="subtitle">
+            
+                茫茫人海中的一枚程序员
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+<div class="container body-wrap">
+
+    <ul class="post-list">
+    
+        <li class="post-list-item fade">
+            <article id="post-Monkey的使用"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-09-04 11:41:58" datetime="2017-09-04T03:41:58.000Z"  itemprop="datePublished">2017-09-04</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/09/04/Monkey的使用/">Monkey的使用</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。
+Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现...
+    
+
+        <a href="/2017/09/04/Monkey的使用/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-仿探探小Demo"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-08-03 16:26:40" datetime="2017-08-03T08:26:40.000Z"  itemprop="datePublished">2017-08-03</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/08/03/仿探探小Demo/">仿探探小Demo</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        为了学习DataBinding，自己模仿了探探写的一个小Demo。
+里面主要关键点有：DataBinding的使用，人脸检测，仿探探雷达扫描附近的人效果，仿探探卡片滑动效果，转场动画等
+
+                
+                    
+                    
+                
+                
+          ...
+    
+
+        <a href="/2017/08/03/仿探探小Demo/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-07-19 21:08:11" datetime="2017-07-19T13:08:11.000Z"  itemprop="datePublished">2017-07-19</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/">关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        CoordinatorLayoutpublic class CoordinatorLayout extends ViewGroup implements NestedScrollingParent
+CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触摸影响布局的形式产生动画效果。CoordinatorLayout通过设置子View的 Behaviors来调度子View...
+    
+
+        <a href="/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android中常用的特殊字符"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-27 16:58:56" datetime="2017-06-27T08:58:56.000Z"  itemprop="datePublished">2017-06-27</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/27/Android中常用的特殊字符/">Android中常用的特殊字符</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+
+字符
+十进制
+转义字符
+
+
+
+
+&quot;
+&amp;#34;
+&amp;quot;
+
+
+&#39;
+&amp;#39;
+&amp;apos;
+
+
+&amp;
+&amp;#38;
+&amp;amp;
+
+
+lt(&lt;)
+&amp;#60;
+&amp;lt;
+
+
+gt(&gt;)
+&amp;#62;
+&amp;gt;
+
+
+不断开空格
+&amp;#160；
+&amp;nbsp;
+
+
+版...
+    
+
+        <a href="/2017/06/27/Android中常用的特殊字符/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Fresco中SimpleDraweeView的XML属性说明"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-26 16:00:30" datetime="2017-06-26T08:00:30.000Z"  itemprop="datePublished">2017-06-26</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/">Fresco中SimpleDraweeView的XML属性说明</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+
+属性
+说明
+
+
+
+
+fadeDuration
+淡入淡出动画持续时间(单位：毫秒ms)
+
+
+actualImageScaleType
+实际图像的缩放类型
+
+
+placeholderImage
+占位图
+
+
+placeholderImageScaleType
+占位图的缩放类型
+
+
+progressBarImage
+进度图
+
+
+progressBarImageScaleType
+进度图的缩放类...
+    
+
+        <a href="/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android通过外网IP获取定位信息的几种方式"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-16 11:35:32" datetime="2017-06-16T03:35:32.000Z"  itemprop="datePublished">2017-06-16</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/16/Android通过外网IP获取定位信息的几种方式/">Android通过外网IP获取定位信息的几种方式</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)可通过聚合数据的API实现
+方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)百度地图 普通IP定位API
+方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)百度地图Android定位SDK
+方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)高德地图An...
+    
+
+        <a href="/2017/06/16/Android通过外网IP获取定位信息的几种方式/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-记RecyclerView的notifyItemRemoved方法的坑"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-06-08 12:34:41" datetime="2017-06-08T04:34:41.000Z"  itemprop="datePublished">2017-06-08</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/">记RecyclerView的notifyItemRemoved方法的坑</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。
+具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会...
+    
+
+        <a href="/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android透明度对比图"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-05-25 10:09:33" datetime="2017-05-25T02:09:33.000Z"  itemprop="datePublished">2017-05-25</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/05/25/Android透明度对比图/">Android透明度对比图</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        
+
+
+透明度
+数值
+
+
+
+
+100%
+FF
+
+
+95%
+F2
+
+
+90%
+E6
+
+
+85%
+D9
+
+
+80%
+CC
+
+
+75%
+BF
+
+
+70%
+B3
+
+
+65%
+A6
+
+
+60%
+99
+
+
+55%
+8C
+
+
+50%
+80
+
+
+45%
+73
+
+
+40%
+66
+
+
+35%
+59
+
+
+30%
+4D
+
+
+25%
+40
+
+
+20%
+33
+
+
+15%
+26
+
+
+10%
+1A
+
+
+5%
+0D
+
+
+0%
+...
+    
+
+        <a href="/2017/05/25/Android透明度对比图/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android通过WIFI连接真机调试"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-05-25 09:37:51" datetime="2017-05-25T01:37:51.000Z"  itemprop="datePublished">2017-05-25</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/05/25/Android通过WIFI连接真机调试/">Android通过WIFI连接真机调试</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。
+前提条件
+手机和电脑必须在同一局域网内
+配置好adb环境变量
+手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb
+
+执行命令
+
+
+命令
+...
+    
+
+        <a href="/2017/05/25/Android通过WIFI连接真机调试/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+        <li class="post-list-item fade">
+            <article id="post-Android设计模式之单例模式"
+  class="article-card article-type-post" itemprop="blogPost">
+
+    <div class="post-meta">
+        <time class="post-time" title="2017-05-22 16:22:39" datetime="2017-05-22T08:22:39.000Z"  itemprop="datePublished">2017-05-22</time>
+
+        
+
+
+        
+
+    </div>
+
+    
+
+
+  
+    <h3 class="post-title" itemprop="name">
+      <a class="post-title-link" href="/2017/05/22/Android设计模式之单例模式/">Android设计模式之单例模式</a>
+    </h3>
+  
+
+
+
+
+    <div class="post-content" id="post-content" itemprop="postContent">
+
+    
+        参考：https://github.com/simple-android-framework-exchange/android_design_patterns_analysis/tree/master/singleton/mr.simple
+模式的定义确保某一个类只有一个实例，而且自行实例化并向整个系统提供这个实例。
+模式的使用场景确保某个类有且只有一个对象的场景，例如创建一个对象需要消耗的...
+    
+
+        <a href="/2017/05/22/Android设计模式之单例模式/" class="post-more waves-effect waves-button">
+            阅读全文…
+        </a>
+    </div>
+    
+    <div class="post-footer">
+        
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计模式/">设计模式</a></li></ul>
+
+    </div>
+    
+</article>
+
+        </li>
+    
+    </ul>
+
+    
+<nav id="page-nav">
+    <div class="inner">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页</a>
+    </div>
+</nav>
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/&title=JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/&title=JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=JKXY Blog&url=http://jkxy.club/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABU0lEQVR42u3auxbEIAhF0fz/TzvtNMR7gSkGDlXWysOdQkX0eeQ4XxHdja6jtxoCFqxBrPMa0TPu9/W2YMHazOrq9tEv6W3BggVLYemUdyIsWLDqA0Qly4UFC1YladaTYH3gaMjlYcEawcotQXPXP6lvwYL156xjhkvJBSxY21h6B44mVH1itr8PC9ZillsS0pejdpkJFqw1rPdurxeY3IKvUUKCBWsBS1lqKmXZ3F3jwAEsWKNZya6b2go1nocFaxkrt6mZ2yxJFn9hwVrDcpeg7vE7nWufg4AFaxyr3rHdqfryLixY61l6eUgfCOyCFCxYa1i9Bw70kzyXaR4WrGUsPfTtT3vdXAlYsAax3EHBTYLblq+wYC1g5fY1usakS40ZFixY5qEBPcm+/AYsWLDMzU53kpZSAViwVrKUTq434/Z3WLBg5ZJafcIuNQwL1nzWB0RPNf15jmLbAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

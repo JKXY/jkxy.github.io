@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/">
+    
+    
+    <title>记RecyclerView的notifyItemRemoved方法的坑 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="记RecyclerView的notifyItemRemoved方法的坑">
+<meta property="og:url" content="http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+<meta property="og:updated_time" content="2017-06-26T08:02:45.126Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="记RecyclerView的notifyItemRemoved方法的坑">
+<meta name="twitter:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">记RecyclerView的notifyItemRemoved方法的坑</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">记RecyclerView的notifyItemRemoved方法的坑</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-06-08T04:34:41.000Z" itemprop="datePublished" class="page-time">
+  2017-06-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">具体情况</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-记RecyclerView的notifyItemRemoved方法的坑"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">记RecyclerView的notifyItemRemoved方法的坑</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-06-08 12:34:41" datetime="2017-06-08T04:34:41.000Z"  itemprop="datePublished">2017-06-08</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。</p>
+<h3 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h3><p>当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下标错乱，然后各种坑爹的bug就来了。</p>
+<p>就像这样：</p>
+<ol>
+<li>现在有1，2，3，4个数据.</li>
+<li>你第一次删，比如删掉2，这次删除结果是对的，位置2的view消失，数据里原有的第2项也被删除。</li>
+<li>接下来你再删除现在的第2项（原来的第三项）时，调试你会发现，由于绑定时 contentList.remove(position); notifyItemRemoved(position); 这里记住的postion是3，那么这次被删除的数据项会是现有的数据列表的第三项（应该是第二项的）。</li>
+</ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><pre><code>public void remove(int position) {
+        mDataList.remove(position);
+        notifyItemRemoved(position);
+        if(position != mDataList.size()){ // 如果移除的是最后一个，忽略
+            notifyItemRangeChanged(position, mDataList.size() - position);
+        }
+}
+</code></pre><p>remove：把数据从 list 中 remove 掉</p>
+<p>notifyItemRemoved：列表删除 View 且显示动画效果 </p>
+<p>notifyItemRangeChanged：对于被删掉的位置及其后 range 大小范围内的 view 进行重新 onBindViewHolder</p>
+<p>参考：</p>
+<p><a href="http://blog.csdn.net/wangkai0681080/article/details/50082825" target="_blank" rel="external">http://blog.csdn.net/wangkai0681080/article/details/50082825</a></p>
+<p><a href="http://www.2cto.com/kf/201608/534945.html" target="_blank" rel="external">http://www.2cto.com/kf/201608/534945.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-06-26T08:02:45.126Z" itemprop="dateUpdated">2017-06-26 16:02:45</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" target="_blank" rel="external">http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/06/16/Android通过外网IP获取定位信息的几种方式/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android通过外网IP获取定位信息的几种方式</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/05/25/Android透明度对比图/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android透明度对比图</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
+    <script>
+    var cloudTieConfig = {
+        url: 'http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/index.html',
+        sourceId: '记RecyclerView的notifyItemRemoved方法的坑',
+        productKey: 'fd9d2fb7fca04dec8d17333bd126618c',
+        target: 'cloud-tie-wrapper',
+        pcFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/pc.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/pc.min.js',
+        ],
+        mobileFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/mobile.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/mobile.min.js'
+        ]
+    };
+    </script>
+    <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/loader.min.js"></script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢您的支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aQXIbMQwEQP//0841KcfUDLC0deg9qUrSir0HEhrg4yO+Pv+6vnv3/Pp8z/Odz5954MLDw8NbLP272329dcI4f6t9oF9fn9eMh4eHd5uXb/f59t1u6+fPzx4oHh4e3jvwvvvhvOzO322LdTw8PLx3451hm6NlVlLj4eHh/S4vCSOSkKINgnPG9awFDw8PL+bli3uf11f6e3h4eHjrrnpyGLQ/n8fB7WHwn9Xi4eHhXeDNRgdmgwVJsZ4/lCIyxsPDw7vAm91o1tDKj4E8Di4iEjw8PLyHeHlce2OwNecN41o8PDy8C7wW2ZbOm7Ajb4MVJx4eHh7egtdutXWEGhfl+zvg4eHh/QxvX7wmgWwdtq6HGPDw8PDu8Tal7T4HmI0UJIfHi8kIPDw8vAUvaSnlBfE5IEgi2hkmmozAw8PDe5TXLjHf6JPhrX05XvxXwMPDw3uU91S0mjfGZu2uVe6Ch4eHt+a1jaVkoclhsB/MKv4r4OHh4T3Ka6OBTUSb3Dk/QtqDCg8PD+8pXhue7o+NtrM/Cyn+Kanx8PDwrvHOm3Ue9bYPIj+c6oIbDw8P7zKvHRfY95vywn1W3OPh4eHd481aXPnx0C5xf088PDy8n+HNZg3yInsTTAy/hYeHh3eBl8cN+WY9O2w2Lbe6DYaHh4d3gZcvbhMi5DFu26IrEhE8PDy8NW8zCtDWsfm7eXz8oqTGw8PDe5SXlLmzAYL9QEB7vUhc8PDw8Ba8z/KKNuJy6e1jLYa98PDw8C7w2q12Nl6wgc1aaMOTBA8PDy9eSR49bELe2fBB0lp78Yjx8PDwrvE2jbFN62t1Xg2TXTw8PLzf5M3ijDbqTQ6DaFwVDw8P7w14+ednsUL+KK+fe3h4eHjrMCIvjvMIox3tuhjj4uHh4T3UAGubVQksKalnuz0eHh7eBd4f0GShXjUgH1sAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

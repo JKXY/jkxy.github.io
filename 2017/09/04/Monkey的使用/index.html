@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/2017/09/04/Monkey的使用/">
+    
+    
+    <title>Monkey的使用 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Monkey的使用">
+<meta property="og:url" content="http://jkxy.club/2017/09/04/Monkey的使用/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
+<meta property="og:updated_time" content="2017-09-04T03:47:13.076Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Monkey的使用">
+<meta name="twitter:description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Monkey的使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Monkey的使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-09-04T03:41:58.000Z" itemprop="datePublished" class="page-time">
+  2017-09-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本命令</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Monkey的使用"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Monkey的使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-09-04 11:41:58" datetime="2017-09-04T03:41:58.000Z"  itemprop="datePublished">2017-09-04</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲<br>通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。</p>
+<p>Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在开发的应用程序进行压力测试，可以根据获取的log信息进行修复。</p>
+<p> Monkey程序由Android系统自带，使用Java语言写成，在Android文件系统中的存放路径是： /system/framework/monkey.jar；</p>
+<p>Monkey.jar程序是由一个名为“monkey”的Shell脚本来启动执行，shell脚本在Android文件系统中 的存放路径是：/system/bin/monkey；  </p>
+<p>Monkey 命令启动方式：   </p>
+<p>可以通过PC机CMD窗口中执行: adb shell monkey ｛+命令参数｝来进行Monkey测试          </p>
+<p>在PC上adb shell 进入Android系统，通过执行 monkey {+命令参数} 来进行Monkey 测试          </p>
+<p>在Android机或者模拟器上直接执行monkey 命令，可以在Android机上安装Android终端模拟器  </p>
+<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre><code>`-help` 列出简单用法
+
+`-v`   
+作用： 命令行上的每一个-v都将增加反馈信息的详细级别。
+Level1（默认），除了启动、测试完成和最终结果外只提供较少的信息。
+Level2，提供了较为详细的测试信息，如逐个发送到Activity的事件信息。
+Level3，提供了更多的设置信息，如测试中选中或未选中的Activity信息。
+例：
+adb shell monkey -v 10 
+adb shell monkey -v -v 10 
+adb shell monkey -v -v -v 10
+
+`-s` &lt;seed&gt;
+作用：伪随机数生成器的seed值。如果用相同的seed值再次运行monkey，将生成相同的事件序列。
+例： adb shell monkey -s 12345 -v 10 
+
+--throttle &lt;milliseconds&gt;
+作用：在事件之间插入固定的时间（毫秒）延迟，你可以使用这个设置来减缓Monkey的运行速度，如果你不指定这个参数，则事件之间将没有延迟，事件将以最快的速度生成。
+
+例： adb shell monkey –throttle 300 -v 10
+注：常用参数，一般设置为300毫秒，原因是实际用户操作的最快300毫秒左右一个动作事件，所以此处一般设置为300毫秒。
+
+-p &lt;allowed-package-name&gt;
+作用：如果你指定一个或多个包，Monkey将只允许访问这些包中的Activity。如果你的应用程序需要访问这些包(如选择联系人)以外的Activity，你需要指定这些包。如果你不指定任何包，Monkey将允许系统启动所有包的Activity。指定多个包，使用多个-p，一个-p后面接一个包名。
+例： adb shell monkey -p com.android.browser -v 10 
+
+-c &lt;main-category&gt;
+作用：如果你指定一个或多个类别，Monkey将只允许系统启动这些指定类别中列出的Activity。如果你不指定任何类别，Monkey将选择谢列类别中列出的Activity，Intent.CATEGORY_LAUNCHER和Intent.CATEGORY_MONKEY。指定多个类别使用多个-c，每个-c指定一个类别。
+例： adb shell monkey -p com.paipai.ershou -v 10 -c 
+
+--pct-touch &lt;percent&gt;
+作用：调整触摸事件的百分比。（触摸事件是指在屏幕中的一个down-up事件，即在屏幕某处按下并抬起的操作）
+例： adb shell monkey –pct-touch 100 -v 10
+注：常用参数，此参数设置要适应当前被测应用程序的操作，比如一个应用80%的操作都是触摸，那就可以将此参数的百分比设置成相应较高的百分比。
+
+--pct-motion &lt;percent&gt;
+作用：调整motion事件百分比。（motion事件是由屏幕上某处一个down事件、一系列伪随机的移动事件和一个up事件组成）
+例： adb shell monkey –pct-motion 100 -v 10
+注：常用参数，需注意的是移动事件是直线滑动，下面的trackball移动包含曲线移动。
+
+--ignore-crashes
+作用：通常，应用发生崩溃或异常时Monkey会停止运行。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。
+
+--ignore-timeouts
+作用：事件请求超时会影响monkey的测试。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。
+
+保存测试日志
+adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
+</code></pre><p>参考：<a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="external">https://developer.android.com/studio/test/monkey.html</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-09-04T03:47:13.076Z" itemprop="dateUpdated">2017-09-04 11:47:13</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/09/04/Monkey的使用/" target="_blank" rel="external">http://jkxy.club/2017/09/04/Monkey的使用/</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monkey的使用》 — JKXY Blog&url=http://jkxy.club/2017/09/04/Monkey的使用/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/08/03/仿探探小Demo/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">仿探探小Demo</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
+    <script>
+    var cloudTieConfig = {
+        url: 'http://jkxy.club/2017/09/04/Monkey的使用/index.html',
+        sourceId: 'Monkey的使用',
+        productKey: 'fd9d2fb7fca04dec8d17333bd126618c',
+        target: 'cloud-tie-wrapper',
+        pcFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/pc.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/pc.min.js',
+        ],
+        mobileFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/mobile.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/mobile.min.js'
+        ]
+    };
+    </script>
+    <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/loader.min.js"></script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢您的支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monkey的使用》 — JKXY Blog&url=http://jkxy.club/2017/09/04/Monkey的使用/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS27DMAxF0ex/0+4K5NxHqgFEXY+KwJZ1PGDFz+eDr+f1Wt3JV+PPti4ZMmQcyyBbfP+FvHi1Aod9eaMMGTIuYKxe/P7K9ztTGF9NhgwZMgiDBEoemtOPIkOGDBm7Au57iss/gQwZMmSkS9dKYyTg/igXlyFDxoEMvonf//0v/Q0ZMmQcxXjCiwfKzkEw3pUMGTJGM3iAqx3IthX9yX5kyJAxlMFTx/RUxscsyJ1fYDJkyLiSkQZEvk5atiPPypAh4x4Gb0/uSk3Jpkm4lyFDxmxGf4m0KMabo8U0WIYMGdcwailurXlQ61TGFT4ZMmQcyyBHuk7iytNjHmSDE64MGTJGMMihMC2W8UBMGEHTQoYMGaMZaZm+1oxMhyrSIC5DhoypjFoDgAdNvj4/OKJDoQwZMgYxeBBMhyTSRmZnUEOGDBmzGZ2hh06yWhu/aIVXGTJkHM5Ii1m1rfRbmMvPKkOGjNGMNGr1i3H9sTB0tpUhQ8Y4RmfMdG97MoUF/z1kyJAxgtE5zPHhsPQw+oBLhgwZtzFIob9WaEsbmcXsVoYMGeMYT3iRZ9NxCh7u0dlWhgwZ4xj9cjyn9stt8XCYDBkyBjF4qlkLkelRshhwZciQcQGjn9yS0j/5hafBMmTIkNGa3QhHMXgjc8mWIUOGjDBBJZvmYbfYiZUhQ8Y4Bi/0p6WxWpMybUXIkCFjNqMzkNFJStNtbetvyJAh4yTGHxI8A/Hq3Pe0AAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/">
+    
+    
+    <title>关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="CoordinatorLayoutpublic class CoordinatorLayout extends ViewGroup implements NestedScrollingParent CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触摸影响布局的形式产生动画效果。CoordinatorLayout通过设置子View的 Behaviors来调度子View。系统">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout">
+<meta property="og:url" content="http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="CoordinatorLayoutpublic class CoordinatorLayout extends ViewGroup implements NestedScrollingParent CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触摸影响布局的形式产生动画效果。CoordinatorLayout通过设置子View的 Behaviors来调度子View。系统">
+<meta property="og:updated_time" content="2017-07-19T13:09:05.423Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout">
+<meta name="twitter:description" content="CoordinatorLayoutpublic class CoordinatorLayout extends ViewGroup implements NestedScrollingParent CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触摸影响布局的形式产生动画效果。CoordinatorLayout通过设置子View的 Behaviors来调度子View。系统">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-07-19T13:08:11.000Z" itemprop="datePublished" class="page-time">
+  2017-07-19
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CoordinatorLayout"><span class="post-toc-number">1.</span> <span class="post-toc-text">CoordinatorLayout</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#AppBarLayout"><span class="post-toc-number">2.</span> <span class="post-toc-text">AppBarLayout</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#介绍"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">介绍</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#几种情况"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">几种情况</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#CollapsingToolbarLayout"><span class="post-toc-number">3.</span> <span class="post-toc-text">CollapsingToolbarLayout</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#注意"><span class="post-toc-number">4.</span> <span class="post-toc-text">注意</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-07-19 21:08:11" datetime="2017-07-19T13:08:11.000Z"  itemprop="datePublished">2017-07-19</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="CoordinatorLayout"><a href="#CoordinatorLayout" class="headerlink" title="CoordinatorLayout"></a>CoordinatorLayout</h3><pre><code>public class CoordinatorLayout extends ViewGroup implements NestedScrollingParent
+</code></pre><p><code>CoordinatorLayout</code>使用新的思路通过协调调度子布局的形式实现触摸影响布局的形式产生动画效果。<code>CoordinatorLayout</code>通过设置子View的 <code>Behaviors</code>来调度子View。系统（Support V7）提供了AppBarLayout.Behavior, AppBarLayout.ScrollingViewBehavior, FloatingActionButton.Behavior, SwipeDismissBehavior<v extends="" view=""> 等。</v></p>
+<h3 id="AppBarLayout"><a href="#AppBarLayout" class="headerlink" title="AppBarLayout"></a>AppBarLayout</h3><pre><code>public class AppBarLayout extends LinearLayout
+</code></pre><p>AppBarLayout是一个<code>垂直的LinearLayout</code>，实现了Material Design中app bar的scrolling gestures特性。</p>
+<p>AppBarLayout的子View应该声明想要具有的“滚动行为”，这可以通过layout_scrollFlags属性或是setScrollFlags()方法来指定。</p>
+<p><code>AppBarLayout只有作为CoordinatorLayout的直接子View时才能正常工作</code>，<br>为了让AppBarLayout能够知道何时滚动其子View，我们还<code>应该在CoordinatorLayout布局中提供一个可滚动View</code>，我们称之为scrolling view。</p>
+<p>scrolling view和AppBarLayout之间的关联，通过将scrolling view的<code>Behavior</code>设为AppBarLayout.ScrollingViewBehavior来建立。</p>
+<p>ScrollFlags共有五种常量值供AppBarLayout的Children View使用，在xml布局文件中通过app:layout_scrollFlags设置，对应的值为：<code>scroll</code>，<code>enterAlways</code>，<code>enterAlwaysCollapsed</code>，<code>snap</code>，<code>exitUntilCollapsed</code>；也可以在代码中通过setScrollFlags(int)方法使用</p>
+<h4 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h4><p>1.<code>scroll</code>:值设为scroll的View会跟随滚动事件一起发生移动；所有想滚动出屏幕的view都需要设置这个flag，没有设置这个flag的view将被固定在屏幕顶部。</p>
+<p>2.<code>enterAlways</code>:值设为enterAlways的View,当ScrollView往下滚动时，该View会直接往下滚动，而不用考虑ScrollView是否在滚动；这个flag让任意向下的滚动都会导致该view变为可见，如启用快速“返回模式”。</p>
+<p>3.<code>exitUntilCollapsed</code>:值设为exitUntilCollapsed的View，当这个View要往上逐渐“消逝”时，会一直往上滑动，直到剩下的的高度达到它的最小高度后，再响应ScrollView的内部滑动事件。</p>
+<p>4.<code>enterAlwaysCollapsed</code>:是enterAlways的附加选项，一般跟enterAlways一起使用，它是指，View在往下“出现”的时候，首先是enterAlways效果，当View的高度达到最小高度时(注意你的view需要设置minHeight属性)，View就暂时不去往下滚动，直到ScrollView滑动到顶部不再滑动时，View再继续往下滑动，直到滑到View的顶部结束。</p>
+<p>5.<code>snap</code>:在一次滚动结束时，本View很可能只处于“部分显示”的状态，加上这个标记能够达到“要么完全隐藏，要么完全显示”的效果。</p>
+<h4 id="几种情况"><a href="#几种情况" class="headerlink" title="几种情况"></a>几种情况</h4><p>1.scroll：上滑动时，toolbar隐藏；下滑时先滑动scrollview类似的view，待滚动至顶部时，再滑动toolbar至可见</p>
+<p>2.scroll|enterAlways：上滑动时，toolbar隐藏；下滑时先滑动toolbar至可见，再滑动scrolling view</p>
+<p>3.scroll|enterAlways|enterAlwaysCollapsed:</p>
+<p>需要设置</p>
+<pre><code>android:layout_height=&quot;@dimen/dp_200&quot;
+android:minHeight=&quot;@dimen/dp_56&quot;
+</code></pre><p>上滑动时，toolbar隐藏；下滑时先滑动toolbar显示minHeight高度，接着滑动滚动布局显示顶部内容，最后再次滑动toolbar至height设置的高度，并显示标题</p>
+<p>4.scroll|exitUntilCollapsed</p>
+<p> 需要设置</p>
+<pre><code>android:layout_height=&quot;@dimen/dp_200&quot;
+android:minHeight=&quot;@dimen/dp_56&quot;
+</code></pre><p>上滑动时，toolbar收缩至minheight,但不隐藏；下滑时先滑动滚动布局显示顶部内容，接着滑动toolbar至height设置的高度，并显示标题（与3不同的是toolbar不会完全消失）</p>
+<p><code>注意</code>：写了app:layout_scrollFlags属性的话布局会下移，假如有固定在底部的view可能会被挤出屏幕外。</p>
+<h3 id="CollapsingToolbarLayout"><a href="#CollapsingToolbarLayout" class="headerlink" title="CollapsingToolbarLayout"></a>CollapsingToolbarLayout</h3><pre><code>public class CoordinatorLayout extends ViewGroup implements NestedScrollingParent
+</code></pre><p><code>CollapsingToolbarLayout</code>通常用来在布局中包裹一个Toolbar，以实现具有“折叠效果“”的顶部栏。它需要是AppBarLayout的直接子View，这样才能发挥出效果。CollapsingToolbarLayout包含以下特性：</p>
+<ul>
+<li><code>Collasping title</code>（可折叠标题）：当布局完全可见时，这个标题比较大；当折叠起来时，标题也会变小。标题的外观可以通过expandedTextAppearance和collapsedTextAppearance属性来调整。</li>
+<li>Content scrim（内容纱布）：根据CollapsingToolbarLayout是否滚动到一个临界点，内容纱布会显示或隐藏。可以通过setContentScrim(Drawable)来设置内容纱布。</li>
+<li><code>Status bar scrim</code>（状态栏纱布）：也是根据是否滚动到临界点，来决定是否显示。可以通过setStatusBarScrim(Drawable)方法来设置。这个特性只有在Android5.0及其以上版本，我们设置fitSystemWindows为ture时才能生效。</li>
+<li><code>Parallax scrolling children</code>（视差滚动子View）：子View可以选择以“视差”的方式来进行滚动。（视觉效果上就是子View滚动的比其他View稍微慢些）</li>
+<li><code>Pinned position children</code>：子View可以选择固定在某一位置上。</li>
+</ul>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ul>
+<li><p>AppBarLayout必须是CoordinatorLayout的直接子View</p>
+</li>
+<li><p>只要CollapsingToolbarLayout里面包含有toolbar那么CollapsingToolbarLayout的折叠后高度就是toolbar的高度,相当于CollapsingToolbarLayout设置了minHeight属性.</p>
+</li>
+<li><p>CollapsingToolbarLayout折叠到最顶端时,它就是老大,会处于最上层,包括toolbar在内,所有的布局都会被他盖住,显示不出来.</p>
+</li>
+<li><p>怎么实现固定表头,这个也简单,写一个布局放在CollapsingToolbarLayout之后,AppBarLayout之内即可,xml文件中自己找找看吧.你要是问如果放在CollapsingToolbarLayout之前,AppBarLayout之内会怎么样?这样折叠布局就不起作用了.不会折叠了.</p>
+</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-07-19T13:09:05.423Z" itemprop="dateUpdated">2017-07-19 21:09:05</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" target="_blank" rel="external">http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&title=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&title=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2017/08/03/仿探探小Demo/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">仿探探小Demo</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/06/27/Android中常用的特殊字符/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android中常用的特殊字符</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
+    <script>
+    var cloudTieConfig = {
+        url: 'http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/index.html',
+        sourceId: '关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout',
+        productKey: 'fd9d2fb7fca04dec8d17333bd126618c',
+        target: 'cloud-tie-wrapper',
+        pcFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/pc.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/pc.min.js',
+        ],
+        mobileFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/mobile.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/mobile.min.js'
+        ]
+    };
+    </script>
+    <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/loader.min.js"></script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢您的支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&title=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&title=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout》 — JKXY Blog&url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/07/19/关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPYAAAD2CAAAAADAeSUUAAADO0lEQVR42u3ay27bQBAEwPz/TyvXALGo7lkaMMfFkyFIImt1aM/jz5/4ev1z/f/69Xtm35a8kt9xeGFjY2M/hP26vN7dLMEkj3X9/pODeGfBxsbG3srOHyh5f4vMD+jkJ8HGxsbGTkKuPZr8U9efxcbGxsZO2MnN8uIhD7C2+MHGxsb+nexZOF0/9KypdNeI4rZeGjY2NvaPZ+dT0Z//97fMt7GxsbF/MPs1umbFwL1N/9fBhY2Njb2J3YbEbIHmOxr9bZn0xXdiY2NjL2Lnt2mbPvmCThtj7Ug4qrGwsbGxH8g+aaYnYXbXaKEdM39QYGNjYy9l58VDsl6TxNW9h5KHJTY2NvYmdrL4clds5IHULui05RA2Njb2VnaOn7V4ZseUx1V+KNjY2Nj72PUkYXSu7RpQe3DD0MLGxsZex27XdGZxkpc9yWi5XevBxsbG3sTOx6t57LXLNEWdNBppvP2dsbGxsVewz9s3sxFCO8o9Cba6f4aNjY39KHbSms/XdNplmnq9pnySD4MBbGxs7NXstjiZFSQ5dTaueHsXbGxs7EXstk1z0tY5ibfZCPnDz4aNjY29gp3EUtu+aRdo2iJn9gx1NYONjY39EHa+WJMXKm0RkhcPJwtA2NjY2FvZeTy09c1soSdvHs1GDl/00rCxsbFXsNt1mdmIt8W3B1eEGTY2NvY69kmD5qSVP4ulvBR5++TY2NjYq9ltSORrNO0A+GSsW3TRsLGxsdex82i5i3Hv69HdsbGxsRex21iaNf3bNtD5IKEYV2NjY2M/nJ2PSL8lPI5Ll2H0YmNjYy9i51+Rj1FnDzprKs1+DGxsbOxN7Hb5si0SThZu8itZ9HnbS8PGxsZ+OLtt67RrNPk49iQIj1pL2NjY2A9nv8qr/dSs6Z8sfSaNpw+1FzY2NvYKdvvv/vUR5LPUkxhrQ/SkyMHGxsZ+CrsNrZOBQT7QbRd96qE1NjY29jp23YsaPdCsIXVSWrx9PzY2NvavZLchl8dSO4poB9JHAYaNjY29iN2270+KnLZhdF0mFftB2NjY2I9lz8IpL13awmYWe0UzCxsbG3sRu20VtU2lk+/PYTcv62BjY2M/g/0XB9p3y6wuDwAAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
