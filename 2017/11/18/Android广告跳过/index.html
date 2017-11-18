@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/2017/11/18/Android广告跳过/">
+    
+    
+    <title>Android 广告跳过 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Android 广告跳过">
+<meta property="og:url" content="http://jkxy.club/2017/11/18/Android广告跳过/index.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
+<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif">
+<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif">
+<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png">
+<meta property="og:updated_time" content="2017-11-18T05:52:11.726Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Android 广告跳过">
+<meta name="twitter:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+<meta name="twitter:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Android 广告跳过</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Android 广告跳过</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-11-18T05:52:06.000Z" itemprop="datePublished" class="page-time">
+  2017-11-18
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成果"><span class="post-toc-number">3.</span> <span class="post-toc-text">成果</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Android广告跳过"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Android 广告跳过</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-11-18 13:52:06" datetime="2017-11-18T05:52:06.000Z"  itemprop="datePublished">2017-11-18</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>于是我就在想怎么解决这个问题，回忆了一下其它针对广告的方案，发现大部分都是通过反编译实现的，但是这太复杂麻烦了，而且APP不能更新，更新了又要重新处理，感觉不是我理想的方式，于是又在想有没有其它的方案，这时我灵光一闪，他不是提供了“跳过”的按钮给我吗，我们自己去点击又累又烦，而且有时候会点偏，我可以做一个APP，让这个APP帮助我们去点这个按钮啊，岂不美哉！接下来，就要考虑要怎么实现了，我们来分析一下，有那些难点：</p>
+<ol>
+<li>怎么判断是在广告页面；</li>
+<li>怎么实现自动点击跳过按钮；</li>
+</ol>
+<p>分析到这两个问题，我立马就想到了Android手机的无障碍服务AccessibilityService，他完全可以处理两个问题啊，于是立马就开干。</p>
+<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p>在实现过程中，我发现实现起来比我想的麻烦的多，因为我们要去判断每个APP的广告页，而每个APP的跳过按钮又不一样，要想实现不同的APP跳过方案，就必须去一个一个的适配，这个过程其实是非常烦躁的，但一想到这是一劳永逸的事情，就又充满了干劲，在我的不懈努力下，目前适配了如下APP：   <code>知乎</code>、<code>智行火车票</code>、<code>一点资讯小米版</code>、<code>网易云音乐</code>、<code>斗鱼直播</code>、<code>熊猫直播</code>、<code>网易新闻</code>、<code>今日头条</code>、<code>腾讯视频</code>、<code>中国移动</code>、<code>中国联通</code>、<code>招商银行</code>、<code>中国建设银行</code>、<code>掌上生活</code>、<code>携程旅行</code>、<code>ofo共享单车</code>、<code>摩拜单车</code>、<code>内涵段子</code>、<code>搜狐视频</code>、<code>酷狗音乐</code>、<code>全民K歌</code>、<code>QQ空间</code>、<code>土豆视频</code>、<code>AcFun</code>、<code>百度网盘</code>、<code>火萤</code>、<code>安兔兔测评</code>、<code>百度浏览器</code>、<code>掌阅</code>、<code>起点读书</code>、<code>QQ阅读</code>、<code>懒人听书</code>、<code>喜马拉雅FM</code>、<code>追书神器</code>、<code>宜搜小说</code>、<code>知音漫客</code>、<code>腾讯动漫</code>、<code>美柚</code>、<code>饿了么</code>、<code>百度外卖</code>、<code>义乌购</code>、<code>当当</code>、<code>苏宁易购</code>、<code>闲鱼</code>、<code>WIFI万能钥匙</code>、<code>迅雷</code>、<code>豆瓣</code>、<code>京东金融</code>、<code>虾米音乐</code>、<code>一淘</code>、<code>美图秀秀</code>、<code>驾考宝典</code>、<code>米家有品</code>、<code>唯品会</code>、<code>唱吧</code>、<code>雪球股票</code>、<code>爱奇艺</code>、<code>花生地铁WIFI</code></p>
+<figure class="third"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif"><br>    <img src="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png"><br></figure>
+
+
+<p>APK下载：<a href="http://oqdskvwmf.bkt.clouddn.com/adbreak.apk" target="_blank" rel="external">点我</a></p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-11-18T05:52:11.726Z" itemprop="dateUpdated">2017-11-18 13:52:11</time>
+</span><br>
+
+
+        
+        原文链接：<a href="/2017/11/18/Android广告跳过/" target="_blank" rel="external">http://jkxy.club/2017/11/18/Android广告跳过/</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/2017/11/18/Android广告跳过/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2017/09/15/Android APK反编译、重新打包/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android APK反编译、重新打包</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    <div id="cloud-tie-wrapper" class="comments cloud-tie-wrapper"></div>
+    <script>
+    var cloudTieConfig = {
+        url: 'http://jkxy.club/2017/11/18/Android广告跳过/index.html',
+        sourceId: 'Android广告跳过',
+        productKey: 'fd9d2fb7fca04dec8d17333bd126618c',
+        target: 'cloud-tie-wrapper',
+        pcFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/pc.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/pc.min.js',
+        ],
+        mobileFiles: [
+            '//unpkg.com/hexo-theme-material-indigo@latest/css/cloudTie/mobile.css',
+            '//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/mobile.min.js'
+        ]
+    };
+    </script>
+    <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/cloudTie/loader.min.js"></script>
+
+
+
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        感谢您的支持~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <ul class="reward-items">
+        
+        <li>
+            <img src="/img/wechat.png" title="微信打赏二维码" alt="微信打赏二维码">
+            <p>微信</p>
+        </li>
+        
+
+        
+        <li>
+            <img src="/img/alipay.png" title="支付宝打赏二维码" alt="支付宝打赏二维码">
+            <p>支付宝</p>
+        </li>
+        
+    </ul>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p>
+            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
+            <span>JKXY &copy; 2017</span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/2017/11/18/Android广告跳过/&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS26EMBAFwNz/0pNtpGg877lJJEyxihDYUyw6/fHXV3y9fl0/77/7e/78xRcGBsZtGa/ltd5yvea7Xdp9189gYGA8h7H+KetnkpCavNvui4GBgZGndElwXIfL9kNgYGBgJOlgW6Ymxep6NQwMDIy2mGy3Sd79p1ocAwPjhoy86/7/f//JfAMDA+NWjL2yM0n45gVt8S4GBsbRjMkIsy2DJ221aH0MDIyjGfkhsPmQIG/q7Y0/MTAwzmO0baw8jZsUwG17DgMD42xG279qn5kH3wt6hBgYGDdnJMcpkp9Sh8IgYy0GmRgYGEcz2iUmrbT1QYq94xqbXwIDA+NWjL30bi9E5oOEPEGsa3EMDIzbMvYSwb1DGJP7H2awGBgYRzMmRyXyn94214qVMTAwHsBo21tR82urrN0soTEwMI5mtAXqXnhN3m1bbBgYGM9h7C00OX5x1RAUAwPjOYyrjj7M7+991g8YDAyMgxhJShcFuLh8TfZt00oMDIznMCbl6B4pb7fVvUMMDIzjGG352h7IaIcKl81jMTAwjmDkR0uToncvsctTz6LRhoGBcQTjqoBYlJrxgbCCioGBcTSjbZ+1aVxblLbtuRqGgYFxW8akKE022AvHyRi1+O+BgYFxBKMNlJPDE/koIg/HGBgYGPnwchJek/ujTiEGBsZjGMnSybtJAlpU3hgYGA9gtEVsHhYnx7/yQhoDA+NsxqR0nKR0k48ymm9gYGDcifENTNEzCHuJ7koAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '跑去哪里了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '(つェ⊂)咦!又好了!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
