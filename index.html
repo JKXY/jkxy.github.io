@@ -34,9 +34,13 @@
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/img/favicon.png">
+    <link rel="shortcut icon" href="/favicon.ico">
     <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
 </head>
 
 <body>
@@ -156,8 +160,6 @@
         
 
 
-        
-
     </div>
 
     
@@ -204,8 +206,6 @@
 
         
 
-
-        
 
     </div>
 
@@ -258,8 +258,6 @@ smali：    把smali文件编译打包为classes.dex的工具
         
 
 
-        
-
     </div>
 
     
@@ -305,8 +303,6 @@ Monkey是一个命令行工具，可以运行在模拟器里或实际设备中�
 
         
 
-
-        
 
     </div>
 
@@ -361,8 +357,6 @@ Monkey是一个命令行工具，可以运行在模拟器里或实际设备中�
         
 
 
-        
-
     </div>
 
     
@@ -408,8 +402,6 @@ CoordinatorLayout使用新的思路通过协调调度子布局的形式实现触
 
         
 
-
-        
 
     </div>
 
@@ -496,8 +488,6 @@ gt(&gt;)
         
 
 
-        
-
     </div>
 
     
@@ -573,8 +563,6 @@ progressBarImageScaleType
         
 
 
-        
-
     </div>
 
     
@@ -623,8 +611,6 @@ progressBarImageScaleType
         
 
 
-        
-
     </div>
 
     
@@ -670,8 +656,6 @@ progressBarImageScaleType
 
         
 
-
-        
 
     </div>
 
@@ -827,13 +811,15 @@ A6
             
                 <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
             
-            <span>博客内容遵循<a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
         </p>
     </div>
     <div class="bottom">
-        <p>
-            <span>Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a></span>
-            <span>JKXY &copy; 2017</span>
+        <p><span>JKXY &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
         </p>
     </div>
 </footer>
@@ -894,7 +880,6 @@ A6
 var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
-
 </script>
 
 <script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
@@ -933,7 +918,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '跑去哪里了！';
+            document.title = '死鬼去哪里了！';
             clearTimeout(titleTime);
         } else {
             document.title = '(つェ⊂)咦!又好了!';
