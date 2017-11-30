@@ -12,27 +12,27 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/05/25/Android透明度对比图/">
+    <link rel="canonical" href="http://jkxy.club/post/532ab633.html">
     
     
-    <title>Android透明度对比图 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>Android通过外网IP获取定位信息的几种方式 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
+    <meta name="description" content="方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)可通过聚合数据的API实现 方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)百度地图 普通IP定位API 方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)百度地图Android定位SDK 方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)高德地图Andro">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android透明度对比图">
-<meta property="og:url" content="http://jkxy.club/2017/05/25/Android透明度对比图/index.html">
+<meta property="og:title" content="Android通过外网IP获取定位信息的几种方式">
+<meta property="og:url" content="http://jkxy.club/post/532ab633.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
-<meta property="og:updated_time" content="2017-05-25T06:49:50.225Z">
+<meta property="og:description" content="方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)可通过聚合数据的API实现 方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)百度地图 普通IP定位API 方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)百度地图Android定位SDK 方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)高德地图Andro">
+<meta property="og:updated_time" content="2017-06-26T08:02:19.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android透明度对比图">
-<meta name="twitter:description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
+<meta name="twitter:title" content="Android通过外网IP获取定位信息的几种方式">
+<meta name="twitter:description" content="方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)可通过聚合数据的API实现 方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)百度地图 普通IP定位API 方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)百度地图Android定位SDK 方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)高德地图Andro">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android透明度对比图</div>
+        <div class="flex-col header-title ellipsis">Android通过外网IP获取定位信息的几种方式</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android透明度对比图</h1>
+        <h1 class="title">Android通过外网IP获取定位信息的几种方式</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-05-25T02:09:33.000Z" itemprop="datePublished" class="page-time">
-  2017-05-25
+                <time datetime="2017-06-16T03:35:32.000Z" itemprop="datePublished" class="page-time">
+  2017-06-16
 </time>
 
 
@@ -158,17 +158,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明"><span class="post-toc-number">1.</span> <span class="post-toc-text">说明</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法一-通过聚合数据的IP定位API-进行城市定位-无需SDK，需传入外网IP"><span class="post-toc-number">1.</span> <span class="post-toc-text">方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法二-通过百度地图API进行定位-无需SDK，可选择传入外网IP"><span class="post-toc-number">2.</span> <span class="post-toc-text">方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法三-通过百度地图SDK进行定位-需要SDK，无需传入外网IP"><span class="post-toc-number">3.</span> <span class="post-toc-text">方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#方法四-通过高德地图开放平台进行定位-需要SDK，无需传入外网IP"><span class="post-toc-number">4.</span> <span class="post-toc-text">方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android透明度对比图"
+<article id="post-Android通过外网IP获取定位信息的几种方式"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android透明度对比图</h1>
+        <h1 class="post-card-title">Android通过外网IP获取定位信息的几种方式</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-05-25 10:09:33" datetime="2017-05-25T02:09:33.000Z"  itemprop="datePublished">2017-05-25</time>
+            <time class="post-time" title="2017-06-16 11:35:32" datetime="2017-06-16T03:35:32.000Z"  itemprop="datePublished">2017-06-16</time>
 
             
 
@@ -181,105 +181,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <table>
-<thead>
-<tr>
-<th style="text-align:center">透明度</th>
-<th style="text-align:center">数值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">100%</td>
-<td style="text-align:center">FF</td>
-</tr>
-<tr>
-<td style="text-align:center">95%</td>
-<td style="text-align:center">F2</td>
-</tr>
-<tr>
-<td style="text-align:center">90%</td>
-<td style="text-align:center">E6</td>
-</tr>
-<tr>
-<td style="text-align:center">85%</td>
-<td style="text-align:center">D9</td>
-</tr>
-<tr>
-<td style="text-align:center">80%</td>
-<td style="text-align:center">CC</td>
-</tr>
-<tr>
-<td style="text-align:center">75%</td>
-<td style="text-align:center">BF</td>
-</tr>
-<tr>
-<td style="text-align:center">70%</td>
-<td style="text-align:center">B3</td>
-</tr>
-<tr>
-<td style="text-align:center">65%</td>
-<td style="text-align:center">A6</td>
-</tr>
-<tr>
-<td style="text-align:center">60%</td>
-<td style="text-align:center">99</td>
-</tr>
-<tr>
-<td style="text-align:center">55%</td>
-<td style="text-align:center">8C</td>
-</tr>
-<tr>
-<td style="text-align:center">50%</td>
-<td style="text-align:center">80</td>
-</tr>
-<tr>
-<td style="text-align:center">45%</td>
-<td style="text-align:center">73</td>
-</tr>
-<tr>
-<td style="text-align:center">40%</td>
-<td style="text-align:center">66</td>
-</tr>
-<tr>
-<td style="text-align:center">35%</td>
-<td style="text-align:center">59</td>
-</tr>
-<tr>
-<td style="text-align:center">30%</td>
-<td style="text-align:center">4D</td>
-</tr>
-<tr>
-<td style="text-align:center">25%</td>
-<td style="text-align:center">40</td>
-</tr>
-<tr>
-<td style="text-align:center">20%</td>
-<td style="text-align:center">33</td>
-</tr>
-<tr>
-<td style="text-align:center">15%</td>
-<td style="text-align:center">26</td>
-</tr>
-<tr>
-<td style="text-align:center">10%</td>
-<td style="text-align:center">1A</td>
-</tr>
-<tr>
-<td style="text-align:center">5%</td>
-<td style="text-align:center">0D</td>
-</tr>
-<tr>
-<td style="text-align:center">0%</td>
-<td style="text-align:center">00</td>
-</tr>
-</tbody>
-</table>
-<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
-<li>透明度分为256阶（0-255）</li>
-<li>50%即255*50%</li>
-<li>Android xml里面是用十六进制表示：Integer.toHexString( 255*50% ).toUpperCase();-&gt;80</li>
-</ul>
+            <h4 id="方法一-通过聚合数据的IP定位API-进行城市定位-无需SDK，需传入外网IP"><a href="#方法一-通过聚合数据的IP定位API-进行城市定位-无需SDK，需传入外网IP" class="headerlink" title="方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)"></a>方法一 通过聚合数据的IP定位API 进行城市定位 (无需SDK，需传入外网IP)</h4><p>可通过<a href="https://www.juhe.cn/docs/api/id/1" target="_blank" rel="external">聚合数据的API</a>实现</p>
+<h4 id="方法二-通过百度地图API进行定位-无需SDK，可选择传入外网IP"><a href="#方法二-通过百度地图API进行定位-无需SDK，可选择传入外网IP" class="headerlink" title="方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)"></a>方法二 通过百度地图API进行定位 (无需SDK，可选择传入外网IP)</h4><p><a href="http://lbsyun.baidu.com/index.php?title=webapi/ip-api" target="_blank" rel="external">百度地图 普通IP定位API</a></p>
+<h4 id="方法三-通过百度地图SDK进行定位-需要SDK，无需传入外网IP"><a href="#方法三-通过百度地图SDK进行定位-需要SDK，无需传入外网IP" class="headerlink" title="方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)"></a>方法三 通过百度地图SDK进行定位 (需要SDK，无需传入外网IP)</h4><p><a href="http://lbsyun.baidu.com/index.php?title=android-locsdk/guide/getloc" target="_blank" rel="external">百度地图Android定位SDK</a></p>
+<h4 id="方法四-通过高德地图开放平台进行定位-需要SDK，无需传入外网IP"><a href="#方法四-通过高德地图开放平台进行定位-需要SDK，无需传入外网IP" class="headerlink" title="方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)"></a>方法四 通过高德地图开放平台进行定位 (需要SDK，无需传入外网IP)</h4><p><a href="http://lbs.amap.com/getting-started/locate/" target="_blank" rel="external">高德地图Android定位SDK</a></p>
+<p>参考：<a href="http://blog.csdn.net/ethanco/article/details/52777032" target="_blank" rel="external">http://blog.csdn.net/ethanco/article/details/52777032</a></p>
 
         </div>
 
@@ -287,12 +193,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-25T06:49:50.225Z" itemprop="dateUpdated">2017-05-25 14:49:50</time>
+    最后更新时间：<time datetime="2017-06-26T08:02:19.746Z" itemprop="dateUpdated">2017-06-26 16:02:19</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/05/25/Android透明度对比图/" target="_blank" rel="external">http://jkxy.club/2017/05/25/Android透明度对比图/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/532ab633.html" target="_blank" rel="external">http://jkxy.club/post/532ab633.html</a>
         
     </div>
     <footer>
@@ -322,7 +228,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/05/25/Android透明度对比图/&title=《Android透明度对比图》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/532ab633.html&title=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -332,22 +238,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/05/25/Android透明度对比图/&title=《Android透明度对比图》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/532ab633.html&title=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/05/25/Android透明度对比图/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/532ab633.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android透明度对比图》 — JKXY Blog&url=http://jkxy.club/2017/05/25/Android透明度对比图/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&url=http://jkxy.club/post/532ab633.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/05/25/Android透明度对比图/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/532ab633.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -370,18 +276,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" id="post-prev" class="post-nav-link">
+      <a href="/post/e3fd73ec.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">记RecyclerView的notifyItemRemoved方法的坑</h4>
+        <h4 class="title">Fresco中SimpleDraweeView的XML属性说明</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/25/Android通过WIFI连接真机调试/" id="post-next" class="post-nav-link">
+      <a href="/post/988003c4.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android通过WIFI连接真机调试</h4>
+        <h4 class="title">记RecyclerView的notifyItemRemoved方法的坑</h4>
       </a>
     </div>
   
@@ -499,7 +405,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/05/25/Android透明度对比图/&title=《Android透明度对比图》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/532ab633.html&title=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -509,22 +415,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/05/25/Android透明度对比图/&title=《Android透明度对比图》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/532ab633.html&title=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/05/25/Android透明度对比图/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/532ab633.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android透明度对比图》 — JKXY Blog&url=http://jkxy.club/2017/05/25/Android透明度对比图/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过外网IP获取定位信息的几种方式》 — JKXY Blog&url=http://jkxy.club/post/532ab633.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/05/25/Android透明度对比图/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/532ab633.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -535,7 +441,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLklEQVR42u3a226DQAwFwPz/T9PXSBVwbNNKuwxPUUPZTCq5vn0+8XV8XfM7v9/9/To5pXlhYGAsyzgur+SAOS859+weDAyM9zB6YfHs4An+7Gk3v4uBgYFxyaiG3fw5GBgYGPPAl4B7iSAGBgZGr4hNUsOEOgnKD9TiGBgYCzJ6j/6f138y38DAwFiKcRSv6gBy8oTCp8LAwNia8dQAspcOTgIuBgbGexhJcZi8Wx1YJmcld37yqhoDA2NTRvXgfPErCbLJkCAKuBgYGIszqp2r3pF5c7+3wIGBgbE346mAOx+F9kpfDAyM9zB6heVk/Nlr8N1si2BgYGzNeKrp/9QKV/6VndbiGBgYWzMKyw1BajgZT17fP9oZwcDAWJaRLEDkTbecPQno5ZkDBgbGsoxqQ20+Tsip0U8wMDC2ZkyCYDX5u+b10sqbvwkGBsYLGNVVsGq7vxeOywEXAwNjccakKfZs4jhZ6cDAwNibkT8iD6zV1Yocc/N/AwMDY2tGr1nWGxjkBW01EGNgYLyN8dRgspoOJiVrlBRiYGBsykjyx7y5X00cq626m6YbBgbGRoyjeFWHmr0FjiQ9LZSvGBgYizPya9LQn4wnC8sWGBgYWzOq7bY8UPZSyepCBgYGxnsYk0WKXvVcLWJvPhUGBgZGMLZMEr68SC4vYWBgYGC0XufJZV7WPpYaYmBgLMiolp29UWWeROYhGwMD4w2MUelYvCcfG+RhFwMDY2vGD2J/IuD3gAZSAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAB0UlEQVR42u3aSW7DMAwF0Nz/0inQXdFG+SQtxQWeVgbi4SkLgoMej3g9v9er69/r97OvnnrsWLi4uGPuc7nW3PXn13cm2/5jS7i4uAe5SfBab2Mdc5KAuDbg4uLek5sEnTdhKNgGLi7u/+ImRUv1Tlxc3Dtzk+InKYHyX7fXari4uAPuvGE6vz7a38XFxR1MJfIBSdIq7X3xx/txcXGPcJN0JB+E5KEwT3rKL8LFxR1zq63SyWbyhKYQwnBxcTdwqylLbzTSS57KbVNcXNwN3OqQY97ByMNis2eDi4vb4uYBKw9k1WFMIYDi4uIe5PYOV1W7L0k5NJoG4+LiXsrNE53e4YwkCJaLHFxc3G3caqMzaWTsS49wcXE/xe19cjKCrYZFXFzc3dzeGOOqxKhaFOHi4p7h5o2MSVFUTWjKAxVcXNxLub2BR/WARSFIrUMbLi7uQW6v6TkJf71jHLi4uCe5vVFrksqMRqq90164uLhjbjWg5AEuL2zyDePi4p7kVsecvWMZ1bIKFxf3DtxqYzS/v1oCXTBKwcXFPcitFi29jb15Py4u7u25PUT1QBguLu6nuJMyptqEzf+UUa2Gi4s74PYappPWSRJAcXFxP8T9Ar8utHvjj2QXAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 

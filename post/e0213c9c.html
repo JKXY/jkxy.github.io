@@ -12,27 +12,27 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/">
+    <link rel="canonical" href="http://jkxy.club/post/e0213c9c.html">
     
     
-    <title>记RecyclerView的notifyItemRemoved方法的坑 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>Android透明度对比图 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+    <meta name="description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="记RecyclerView的notifyItemRemoved方法的坑">
-<meta property="og:url" content="http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/index.html">
+<meta property="og:title" content="Android透明度对比图">
+<meta property="og:url" content="http://jkxy.club/post/e0213c9c.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
-<meta property="og:updated_time" content="2017-06-26T08:02:45.126Z">
+<meta property="og:description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
+<meta property="og:updated_time" content="2017-05-25T06:49:50.225Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="记RecyclerView的notifyItemRemoved方法的坑">
-<meta name="twitter:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+<meta name="twitter:title" content="Android透明度对比图">
+<meta name="twitter:description" content="透明度 数值     100% FF   95% F2   90% E6   85% D9   80% CC   75% BF   70% B3   65% A6   60% 99   55% 8C   50% 80   45% 73   40% 66   35% 59   30% 4D   25% 40   20% 33   15% 26   10% 1A   5% 0D   0% 00">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">记RecyclerView的notifyItemRemoved方法的坑</div>
+        <div class="flex-col header-title ellipsis">Android透明度对比图</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">记RecyclerView的notifyItemRemoved方法的坑</h1>
+        <h1 class="title">Android透明度对比图</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-06-08T04:34:41.000Z" itemprop="datePublished" class="page-time">
-  2017-06-08
+                <time datetime="2017-05-25T02:09:33.000Z" itemprop="datePublished" class="page-time">
+  2017-05-25
 </time>
 
 
@@ -158,17 +158,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">具体情况</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#说明"><span class="post-toc-number">1.</span> <span class="post-toc-text">说明</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-记RecyclerView的notifyItemRemoved方法的坑"
+<article id="post-Android透明度对比图"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">记RecyclerView的notifyItemRemoved方法的坑</h1>
+        <h1 class="post-card-title">Android透明度对比图</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-06-08 12:34:41" datetime="2017-06-08T04:34:41.000Z"  itemprop="datePublished">2017-06-08</time>
+            <time class="post-time" title="2017-05-25 10:09:33" datetime="2017-05-25T02:09:33.000Z"  itemprop="datePublished">2017-05-25</time>
 
             
 
@@ -181,27 +181,105 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。</p>
-<h3 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h3><p>当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下标错乱，然后各种坑爹的bug就来了。</p>
-<p>就像这样：</p>
-<ol>
-<li>现在有1，2，3，4个数据.</li>
-<li>你第一次删，比如删掉2，这次删除结果是对的，位置2的view消失，数据里原有的第2项也被删除。</li>
-<li>接下来你再删除现在的第2项（原来的第三项）时，调试你会发现，由于绑定时 contentList.remove(position); notifyItemRemoved(position); 这里记住的postion是3，那么这次被删除的数据项会是现有的数据列表的第三项（应该是第二项的）。</li>
-</ol>
-<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><pre><code>public void remove(int position) {
-        mDataList.remove(position);
-        notifyItemRemoved(position);
-        if(position != mDataList.size()){ // 如果移除的是最后一个，忽略
-            notifyItemRangeChanged(position, mDataList.size() - position);
-        }
-}
-</code></pre><p>remove：把数据从 list 中 remove 掉</p>
-<p>notifyItemRemoved：列表删除 View 且显示动画效果 </p>
-<p>notifyItemRangeChanged：对于被删掉的位置及其后 range 大小范围内的 view 进行重新 onBindViewHolder</p>
-<p>参考：</p>
-<p><a href="http://blog.csdn.net/wangkai0681080/article/details/50082825" target="_blank" rel="external">http://blog.csdn.net/wangkai0681080/article/details/50082825</a></p>
-<p><a href="http://www.2cto.com/kf/201608/534945.html" target="_blank" rel="external">http://www.2cto.com/kf/201608/534945.html</a></p>
+            <table>
+<thead>
+<tr>
+<th style="text-align:center">透明度</th>
+<th style="text-align:center">数值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">100%</td>
+<td style="text-align:center">FF</td>
+</tr>
+<tr>
+<td style="text-align:center">95%</td>
+<td style="text-align:center">F2</td>
+</tr>
+<tr>
+<td style="text-align:center">90%</td>
+<td style="text-align:center">E6</td>
+</tr>
+<tr>
+<td style="text-align:center">85%</td>
+<td style="text-align:center">D9</td>
+</tr>
+<tr>
+<td style="text-align:center">80%</td>
+<td style="text-align:center">CC</td>
+</tr>
+<tr>
+<td style="text-align:center">75%</td>
+<td style="text-align:center">BF</td>
+</tr>
+<tr>
+<td style="text-align:center">70%</td>
+<td style="text-align:center">B3</td>
+</tr>
+<tr>
+<td style="text-align:center">65%</td>
+<td style="text-align:center">A6</td>
+</tr>
+<tr>
+<td style="text-align:center">60%</td>
+<td style="text-align:center">99</td>
+</tr>
+<tr>
+<td style="text-align:center">55%</td>
+<td style="text-align:center">8C</td>
+</tr>
+<tr>
+<td style="text-align:center">50%</td>
+<td style="text-align:center">80</td>
+</tr>
+<tr>
+<td style="text-align:center">45%</td>
+<td style="text-align:center">73</td>
+</tr>
+<tr>
+<td style="text-align:center">40%</td>
+<td style="text-align:center">66</td>
+</tr>
+<tr>
+<td style="text-align:center">35%</td>
+<td style="text-align:center">59</td>
+</tr>
+<tr>
+<td style="text-align:center">30%</td>
+<td style="text-align:center">4D</td>
+</tr>
+<tr>
+<td style="text-align:center">25%</td>
+<td style="text-align:center">40</td>
+</tr>
+<tr>
+<td style="text-align:center">20%</td>
+<td style="text-align:center">33</td>
+</tr>
+<tr>
+<td style="text-align:center">15%</td>
+<td style="text-align:center">26</td>
+</tr>
+<tr>
+<td style="text-align:center">10%</td>
+<td style="text-align:center">1A</td>
+</tr>
+<tr>
+<td style="text-align:center">5%</td>
+<td style="text-align:center">0D</td>
+</tr>
+<tr>
+<td style="text-align:center">0%</td>
+<td style="text-align:center">00</td>
+</tr>
+</tbody>
+</table>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ul>
+<li>透明度分为256阶（0-255）</li>
+<li>50%即255*50%</li>
+<li>Android xml里面是用十六进制表示：Integer.toHexString( 255*50% ).toUpperCase();-&gt;80</li>
+</ul>
 
         </div>
 
@@ -209,12 +287,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-06-26T08:02:45.126Z" itemprop="dateUpdated">2017-06-26 16:02:45</time>
+    最后更新时间：<time datetime="2017-05-25T06:49:50.225Z" itemprop="dateUpdated">2017-05-25 14:49:50</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" target="_blank" rel="external">http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/e0213c9c.html" target="_blank" rel="external">http://jkxy.club/post/e0213c9c.html</a>
         
     </div>
     <footer>
@@ -244,7 +322,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/e0213c9c.html&title=《Android透明度对比图》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -254,22 +332,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/e0213c9c.html&title=《Android透明度对比图》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/e0213c9c.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android透明度对比图》 — JKXY Blog&url=http://jkxy.club/post/e0213c9c.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/e0213c9c.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -292,18 +370,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/16/Android通过外网IP获取定位信息的几种方式/" id="post-prev" class="post-nav-link">
+      <a href="/post/988003c4.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android通过外网IP获取定位信息的几种方式</h4>
+        <h4 class="title">记RecyclerView的notifyItemRemoved方法的坑</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/25/Android透明度对比图/" id="post-next" class="post-nav-link">
+      <a href="/post/f356c74.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android透明度对比图</h4>
+        <h4 class="title">Android通过WIFI连接真机调试</h4>
       </a>
     </div>
   
@@ -421,7 +499,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/e0213c9c.html&title=《Android透明度对比图》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -431,22 +509,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/e0213c9c.html&title=《Android透明度对比图》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/e0213c9c.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android透明度对比图》 — JKXY Blog&url=http://jkxy.club/post/e0213c9c.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/08/记RecyclerView的notifyItemRemoved方法的坑/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/e0213c9c.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -457,7 +535,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACwElEQVR42u3aQXIbMQwEQP//0841KcfUDLC0deg9qUrSir0HEhrg4yO+Pv+6vnv3/Pp8z/Odz5954MLDw8NbLP272329dcI4f6t9oF9fn9eMh4eHd5uXb/f59t1u6+fPzx4oHh4e3jvwvvvhvOzO322LdTw8PLx3451hm6NlVlLj4eHh/S4vCSOSkKINgnPG9awFDw8PL+bli3uf11f6e3h4eHjrrnpyGLQ/n8fB7WHwn9Xi4eHhXeDNRgdmgwVJsZ4/lCIyxsPDw7vAm91o1tDKj4E8Di4iEjw8PLyHeHlce2OwNecN41o8PDy8C7wW2ZbOm7Ajb4MVJx4eHh7egtdutXWEGhfl+zvg4eHh/QxvX7wmgWwdtq6HGPDw8PDu8Tal7T4HmI0UJIfHi8kIPDw8vAUvaSnlBfE5IEgi2hkmmozAw8PDe5TXLjHf6JPhrX05XvxXwMPDw3uU91S0mjfGZu2uVe6Ch4eHt+a1jaVkoclhsB/MKv4r4OHh4T3Ka6OBTUSb3Dk/QtqDCg8PD+8pXhue7o+NtrM/Cyn+Kanx8PDwrvHOm3Ue9bYPIj+c6oIbDw8P7zKvHRfY95vywn1W3OPh4eHd481aXPnx0C5xf088PDy8n+HNZg3yInsTTAy/hYeHh3eBl8cN+WY9O2w2Lbe6DYaHh4d3gZcvbhMi5DFu26IrEhE8PDy8NW8zCtDWsfm7eXz8oqTGw8PDe5SXlLmzAYL9QEB7vUhc8PDw8Ba8z/KKNuJy6e1jLYa98PDw8C7w2q12Nl6wgc1aaMOTBA8PDy9eSR49bELe2fBB0lp78Yjx8PDwrvE2jbFN62t1Xg2TXTw8PLzf5M3ijDbqTQ6DaFwVDw8P7w14+ednsUL+KK+fe3h4eHjrMCIvjvMIox3tuhjj4uHh4T3UAGubVQksKalnuz0eHh7eBd4f0GShXjUgH1sAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3aS47CMBAFQO5/6cwWaRTntTt2iFReITCkzKLVH38+8Tq+1vc74z1nO8fv37BwcXHb3GO4zvb8f+QRr+p3cXFxn+KOA83ZTydhLglwhWCHi4v7Eu44GM0lTLi4uO/iduoUXFzcd3HzQiU/QLWIurlWw8XFbXDzkLTu9ZL+Li4u7hT3KK4kqOWflp+Oi4u7hTuXrOTFzFyT9GJwi4uLu5h7V6u02gSZa6bg4uLu5CZXrPLm5piVD2AuMjJcXNxl3OrjO8dIDhaVW7i4uFu41TBUHYeMk6dkPy4u7n7uXKKThKq51GcyhOHi4i7jJkOR6jE6KdFFIMPFxV3ATa5b9S9VVNusp4fExcXdwp1rW1QToM7QJWqY4uLiLuDm6OogJD98PnrBxcXdwx23LKvtzv7xCg1TXFzcxdxO6zMfmlbXRfGDi4v7EDe/kDGX6BSyMFxc3C3cTliZG5rOVTG4uLg7ufnqo/tHwsXF3cmtlh/VRkZeGkX/Ky4u7kZuJ9BUGyjV4udiJoyLi/sz3GpJkw9xC10cXFzcH+NWC6fO/tviLi4ubpHbv1xVvZyR/AIuLu5T3LuCUX51I2+RtPq7uLi4M9w/MAULCRVK/tEAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

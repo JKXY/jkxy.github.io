@@ -12,32 +12,27 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/11/18/Android广告跳过/">
+    <link rel="canonical" href="http://jkxy.club/post/fe82999d.html">
     
     
-    <title>Android 广告跳过 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>Android APK反编译、重新打包 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+    <meta name="description" content="工具介绍工具下载  baksmali：    把classes.dex转为为smali文件的工具 dex2jar：    classes.dex转为jar包的工具 jdgui：    阅读jar文件的工具（分linux和windows版本，资源中一并给出） smali：    把smali文件编译打包为classes.dex的工具 其中关于baksmali和smali可以看下谷歌的介绍:http:">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android 广告跳过">
-<meta property="og:url" content="http://jkxy.club/2017/11/18/Android广告跳过/index.html">
+<meta property="og:title" content="Android APK反编译、重新打包">
+<meta property="og:url" content="http://jkxy.club/post/fe82999d.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
-<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
-<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif">
-<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif">
-<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png">
-<meta property="og:updated_time" content="2017-11-29T09:03:44.114Z">
+<meta property="og:description" content="工具介绍工具下载  baksmali：    把classes.dex转为为smali文件的工具 dex2jar：    classes.dex转为jar包的工具 jdgui：    阅读jar文件的工具（分linux和windows版本，资源中一并给出） smali：    把smali文件编译打包为classes.dex的工具 其中关于baksmali和smali可以看下谷歌的介绍:http:">
+<meta property="og:updated_time" content="2017-09-15T09:07:55.774Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android 广告跳过">
-<meta name="twitter:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
-<meta name="twitter:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
+<meta name="twitter:title" content="Android APK反编译、重新打包">
+<meta name="twitter:description" content="工具介绍工具下载  baksmali：    把classes.dex转为为smali文件的工具 dex2jar：    classes.dex转为jar包的工具 jdgui：    阅读jar文件的工具（分linux和windows版本，资源中一并给出） smali：    把smali文件编译打包为classes.dex的工具 其中关于baksmali和smali可以看下谷歌的介绍:http:">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -118,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android 广告跳过</div>
+        <div class="flex-col header-title ellipsis">Android APK反编译、重新打包</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android 广告跳过</h1>
+        <h1 class="title">Android APK反编译、重新打包</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-11-18T05:52:06.000Z" itemprop="datePublished" class="page-time">
-  2017-11-18
+                <time datetime="2017-09-15T09:06:17.000Z" itemprop="datePublished" class="page-time">
+  2017-09-15
 </time>
 
 
@@ -163,17 +158,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成果"><span class="post-toc-number">3.</span> <span class="post-toc-text">成果</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工具介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">工具介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#破解步骤"><span class="post-toc-number">2.</span> <span class="post-toc-text">破解步骤</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android广告跳过"
+<article id="post-Android APK反编译、重新打包"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android 广告跳过</h1>
+        <h1 class="post-card-title">Android APK反编译、重新打包</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-11-18 13:52:06" datetime="2017-11-18T05:52:06.000Z"  itemprop="datePublished">2017-11-18</time>
+            <time class="post-time" title="2017-09-15 17:06:17" datetime="2017-09-15T09:06:17.000Z"  itemprop="datePublished">2017-09-15</time>
 
             
 
@@ -186,24 +181,25 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。</p>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg" alt="" title="">
-                </div>
-                <div class="image-caption"></div>
-            </figure>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>于是我就在想怎么解决这个问题，回忆了一下其它针对广告的方案，发现大部分都是通过反编译实现的，但是这太复杂麻烦了，而且APP不能更新，更新了又要重新处理，感觉不是我理想的方式，于是又在想有没有其它的方案，这时我灵光一闪，他不是提供了“跳过”的按钮给我吗，我们自己去点击又累又烦，而且有时候会点偏，我可以做一个APP，让这个APP帮助我们去点这个按钮啊，岂不美哉！接下来，就要考虑要怎么实现了，我们来分析一下，有那些难点：</p>
-<ol>
-<li>怎么判断是在广告页面；</li>
-<li>怎么实现自动点击跳过按钮；</li>
-</ol>
-<p>分析到这两个问题，我立马就想到了Android手机的无障碍服务AccessibilityService，他完全可以处理两个问题啊，于是立马就开干。</p>
-<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p>在实现过程中，我发现实现起来比我想的麻烦的多，因为我们要去判断每个APP的广告页，而每个APP的跳过按钮又不一样，要想实现不同的APP跳过方案，就必须去一个一个的适配，这个过程其实是非常烦躁的，但一想到这是一劳永逸的事情，就又充满了干劲，在我的不懈努力下，目前适配了如下APP：   <code>知乎</code>、<code>智行火车票</code>、<code>一点资讯小米版</code>、<code>网易云音乐</code>、<code>斗鱼直播</code>、<code>熊猫直播</code>、<code>网易新闻</code>、<code>今日头条</code>、<code>腾讯视频</code>、<code>中国移动</code>、<code>中国联通</code>、<code>招商银行</code>、<code>中国建设银行</code>、<code>掌上生活</code>、<code>携程旅行</code>、<code>ofo共享单车</code>、<code>摩拜单车</code>、<code>内涵段子</code>、<code>搜狐视频</code>、<code>酷狗音乐</code>、<code>全民K歌</code>、<code>QQ空间</code>、<code>土豆视频</code>、<code>AcFun</code>、<code>百度网盘</code>、<code>火萤</code>、<code>安兔兔测评</code>、<code>百度浏览器</code>、<code>掌阅</code>、<code>起点读书</code>、<code>QQ阅读</code>、<code>懒人听书</code>、<code>喜马拉雅FM</code>、<code>追书神器</code>、<code>宜搜小说</code>、<code>知音漫客</code>、<code>腾讯动漫</code>、<code>美柚</code>、<code>饿了么</code>、<code>百度外卖</code>、<code>义乌购</code>、<code>当当</code>、<code>苏宁易购</code>、<code>闲鱼</code>、<code>WIFI万能钥匙</code>、<code>迅雷</code>、<code>豆瓣</code>、<code>京东金融</code>、<code>虾米音乐</code>、<code>一淘</code>、<code>美图秀秀</code>、<code>驾考宝典</code>、<code>米家有品</code>、<code>唯品会</code>、<code>唱吧</code>、<code>雪球股票</code>、<code>爱奇艺</code>、<code>花生地铁WIFI</code></p>
-<figure class="third"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif"><br>    <img src="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png"><br></figure>
-
-<p>APK下载：<a href="http://oqdskvwmf.bkt.clouddn.com/adbreak.apk" target="_blank" rel="external">点我</a></p>
+            <h3 id="工具介绍"><a href="#工具介绍" class="headerlink" title="工具介绍"></a>工具介绍</h3><p>工具<a href="http://oqdskvwmf.bkt.clouddn.com/APK%E7%A0%B4%E8%A7%A3.rar" target="_blank" rel="external">下载</a></p>
+<ul>
+<li>baksmali：    把classes.dex转为为smali文件的工具</li>
+<li>dex2jar：    classes.dex转为jar包的工具</li>
+<li>jdgui：    阅读jar文件的工具（分linux和windows版本，资源中一并给出）</li>
+<li>smali：    把smali文件编译打包为classes.dex的工具</li>
+<li>其中关于baksmali和smali可以看下谷歌的介绍:<a href="http://baksmali.com" target="_blank" rel="external">http://baksmali.com</a></li>
+<li>dex2jar和jdgui不是必须的，只是用来查看源码的，因为直接看smali文件难度较大</li>
+</ul>
+<h3 id="破解步骤"><a href="#破解步骤" class="headerlink" title="破解步骤"></a>破解步骤</h3><p>1.解压apk文件，获取classes.dex并拷贝到资源根目录（使用zip或其他解压工具即可）</p>
+<p>2.使用baksmali工具将classes.dex转为smali文件，在命令行定位到资源根目录并执行：<br>    java -jar baksmali-2.0.3.jar -x classes.dex<br>   执行完后会在当前目录下生成out目录，目录结构跟源码相同，在对应目录下查找对应的smali文件</p>
+<p>3.使用dex2jar工具把dex转为jar文件，拷贝classes.dex到资源目录下的dex2jar-0.0.9.15目录下，把命令行定位到该目录并执行：<br>   ./dex2jar.sh classes.dex  (windows:dex2jar.bat classes.dex)<br>  执行完后会在当前目录下生成classes_dex2jar.jar文件，然后可以通过jdgui进行查看</p>
+<p>4.使用jdgui工具查看APK的源码，根据不同的系统打开资源目录下对应的jdgui工具，然后把第3步生成的classes_dex2jar.jar文件拖到工具中</p>
+<p>5.修改对应的smali文件</p>
+<p>6.使用smali-2.0.3.jar工具把smali文件转为dex文件，把命令行定位到资源根目录并执行：<br>    java -jar smali-2.0.3.jar -o classes.dex out<br>   执行完后会生成并替换掉根目录下的classes.dex文件，这样就修改成功了</p>
+<p>7.把新生成的classes.dex文件替换到原来的apk文件里（使用压缩工具）</p>
+<p>8.使用签名工具对apk进行签名，把apk拷贝到资源根目录下的sign_tool目录，把命令行定位到该目录并执行：<br>   java -jar signapk.jar platform.x509.pem platform.pk8 test.apk changetest.apk<br>    执行完后会在该目录下生成changetest.apk文件，这个文件就是最终的文件了</p>
+<p>9.卸载原来的APK，安装第8步中生成的changetest.apk文件</p>
+<p>参考：<a href="http://blog.csdn.net/lucherr/article/details/39896549" target="_blank" rel="external">http://blog.csdn.net/lucherr/article/details/39896549</a></p>
 
         </div>
 
@@ -211,12 +207,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-11-29T09:03:44.114Z" itemprop="dateUpdated">2017-11-29 17:03:44</time>
+    最后更新时间：<time datetime="2017-09-15T09:07:55.774Z" itemprop="dateUpdated">2017-09-15 17:07:55</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/11/18/Android广告跳过/" target="_blank" rel="external">http://jkxy.club/2017/11/18/Android广告跳过/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/fe82999d.html" target="_blank" rel="external">http://jkxy.club/post/fe82999d.html</a>
         
     </div>
     <footer>
@@ -246,7 +242,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/fe82999d.html&title=《Android APK反编译、重新打包》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -256,22 +252,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/fe82999d.html&title=《Android APK反编译、重新打包》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/fe82999d.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/2017/11/18/Android广告跳过/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android APK反编译、重新打包》 — JKXY Blog&url=http://jkxy.club/post/fe82999d.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/fe82999d.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -291,14 +287,21 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/post/8d1f962d.html" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Android 广告跳过</h4>
+      </a>
+    </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/09/15/Android APK反编译、重新打包/" id="post-next" class="post-nav-link">
+      <a href="/post/6035586f.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android APK反编译、重新打包</h4>
+        <h4 class="title">Monkey的使用</h4>
       </a>
     </div>
   
@@ -416,7 +419,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/fe82999d.html&title=《Android APK反编译、重新打包》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -426,22 +429,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/11/18/Android广告跳过/&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/fe82999d.html&title=《Android APK反编译、重新打包》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/fe82999d.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/2017/11/18/Android广告跳过/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android APK反编译、重新打包》 — JKXY Blog&url=http://jkxy.club/post/fe82999d.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/11/18/Android广告跳过/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/fe82999d.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -452,7 +455,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACM0lEQVR42u3aS26EMBAFwNz/0pNtpGg877lJJEyxihDYUyw6/fHXV3y9fl0/77/7e/78xRcGBsZtGa/ltd5yvea7Xdp9189gYGA8h7H+KetnkpCavNvui4GBgZGndElwXIfL9kNgYGBgJOlgW6Ymxep6NQwMDIy2mGy3Sd79p1ocAwPjhoy86/7/f//JfAMDA+NWjL2yM0n45gVt8S4GBsbRjMkIsy2DJ221aH0MDIyjGfkhsPmQIG/q7Y0/MTAwzmO0baw8jZsUwG17DgMD42xG279qn5kH3wt6hBgYGDdnJMcpkp9Sh8IgYy0GmRgYGEcz2iUmrbT1QYq94xqbXwIDA+NWjL30bi9E5oOEPEGsa3EMDIzbMvYSwb1DGJP7H2awGBgYRzMmRyXyn94214qVMTAwHsBo21tR82urrN0soTEwMI5mtAXqXnhN3m1bbBgYGM9h7C00OX5x1RAUAwPjOYyrjj7M7+991g8YDAyMgxhJShcFuLh8TfZt00oMDIznMCbl6B4pb7fVvUMMDIzjGG352h7IaIcKl81jMTAwjmDkR0uToncvsctTz6LRhoGBcQTjqoBYlJrxgbCCioGBcTSjbZ+1aVxblLbtuRqGgYFxW8akKE022AvHyRi1+O+BgYFxBKMNlJPDE/koIg/HGBgYGPnwchJek/ujTiEGBsZjGMnSybtJAlpU3hgYGA9gtEVsHhYnx7/yQhoDA+NsxqR0nKR0k48ymm9gYGDcifENTNEzCHuJ7koAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByklEQVR42u3aQWrEMBAEwP3/pzeQWwh2ukcrYULpFBZslXMYND16veL1/l5Xv/9e+bOvHQsXF3eZ+75dV6/Oob/fk/x+9U5cXNyT3PtCc/8BszKXvwEXF/fJ3PunWhwuLu7/4CbtTXtIwsXFfTI3KUPJyovg9l4NFxd3gdsGpjv+3pjv4uLiltx3uZaOJqMdf+yOi4t7hJtHHkm00Y5pZ0EJLi7ubm4SaObE2SWM4j24uLhHuG2huUfPrmvkQxpcXNwz3PZyVR5ozlqp+1AVFxf3DLdtbGaflI9j8x1xcXF3c/ORZxudJO3NsO3BxcXdxs3bm3aDlRB2OOnFxcX9EDcJI9ojSBuVDhskXFzcbdxiEjvauB3A/PEvwMXFPcidhSPtAGZ2CQMXF/c8tz2mtBcv8sBlOP/BxcXdwE16o5XtZzdBLnfExcU9yN2euLRh6H0hw8XFPcLN16eanGIC3N72wsXFXea2BWU9Nv1UvIKLi7ub2x5ckhYoCVxmT+Hi4p7kJsWrLT1tcxUdj3BxcR/GTcYqyQBmVhZxcXGfzM2PL0tHmSsbLi7uQW7S/KyMUdvg9QO9Gi4u7gJ3PTBNPixH5INbXFzcDdwvyqJswyPFLOcAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

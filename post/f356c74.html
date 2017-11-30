@@ -12,27 +12,27 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/">
+    <link rel="canonical" href="http://jkxy.club/post/f356c74.html">
     
     
-    <title>Fresco中SimpleDraweeView的XML属性说明 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>Android通过WIFI连接真机调试 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="属性 说明     fadeDuration 淡入淡出动画持续时间(单位：毫秒ms)   actualImageScaleType 实际图像的缩放类型   placeholderImage 占位图   placeholderImageScaleType 占位图的缩放类型   progressBarImage 进度图   progressBarImageScaleType 进度图的缩放类型">
+    <meta name="description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fresco中SimpleDraweeView的XML属性说明">
-<meta property="og:url" content="http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/index.html">
+<meta property="og:title" content="Android通过WIFI连接真机调试">
+<meta property="og:url" content="http://jkxy.club/post/f356c74.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="属性 说明     fadeDuration 淡入淡出动画持续时间(单位：毫秒ms)   actualImageScaleType 实际图像的缩放类型   placeholderImage 占位图   placeholderImageScaleType 占位图的缩放类型   progressBarImage 进度图   progressBarImageScaleType 进度图的缩放类型">
-<meta property="og:updated_time" content="2017-06-26T08:02:00.171Z">
+<meta property="og:description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
+<meta property="og:updated_time" content="2017-05-27T03:06:56.810Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fresco中SimpleDraweeView的XML属性说明">
-<meta name="twitter:description" content="属性 说明     fadeDuration 淡入淡出动画持续时间(单位：毫秒ms)   actualImageScaleType 实际图像的缩放类型   placeholderImage 占位图   placeholderImageScaleType 占位图的缩放类型   progressBarImage 进度图   progressBarImageScaleType 进度图的缩放类型">
+<meta name="twitter:title" content="Android通过WIFI连接真机调试">
+<meta name="twitter:description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Fresco中SimpleDraweeView的XML属性说明</div>
+        <div class="flex-col header-title ellipsis">Android通过WIFI连接真机调试</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Fresco中SimpleDraweeView的XML属性说明</h1>
+        <h1 class="title">Android通过WIFI连接真机调试</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-06-26T08:00:30.000Z" itemprop="datePublished" class="page-time">
-  2017-06-26
+                <time datetime="2017-05-25T01:37:51.000Z" itemprop="datePublished" class="page-time">
+  2017-05-25
 </time>
 
 
@@ -155,13 +155,20 @@
 
 <div class="container body-wrap">
     
-<article id="post-Fresco中SimpleDraweeView的XML属性说明"
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前提条件"><span class="post-toc-number">2.</span> <span class="post-toc-text">前提条件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">执行命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关资料"><span class="post-toc-number">5.</span> <span class="post-toc-text">相关资料</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-Android通过WIFI连接真机调试"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Fresco中SimpleDraweeView的XML属性说明</h1>
+        <h1 class="post-card-title">Android通过WIFI连接真机调试</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-06-26 16:00:30" datetime="2017-06-26T08:00:30.000Z"  itemprop="datePublished">2017-06-26</time>
+            <time class="post-time" title="2017-05-25 09:37:51" datetime="2017-05-25T01:37:51.000Z"  itemprop="datePublished">2017-05-25</time>
 
             
 
@@ -174,112 +181,35 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <table>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。</p>
+<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul>
+<li>手机和电脑必须在同一局域网内</li>
+<li>配置好adb环境变量</li>
+<li>手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb</li>
+</ul>
+<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><table>
 <thead>
 <tr>
-<th>属性</th>
+<th>命令</th>
 <th>说明</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>fadeDuration</td>
-<td>淡入淡出动画持续时间(单位：毫秒ms)</td>
+<td>adb tcpip 5555</td>
+<td>修改adb连接方式为WIFI连接（PS：这一步需要通过USB数据线和电脑正常连接，这步只需执行一次，下次不需要执行了）</td>
 </tr>
 <tr>
-<td>actualImageScaleType</td>
-<td>实际图像的缩放类型</td>
-</tr>
-<tr>
-<td>placeholderImage</td>
-<td>占位图</td>
-</tr>
-<tr>
-<td>placeholderImageScaleType</td>
-<td>占位图的缩放类型</td>
-</tr>
-<tr>
-<td>progressBarImage</td>
-<td>进度图</td>
-</tr>
-<tr>
-<td>progressBarImageScaleType</td>
-<td>进度图的缩放类型</td>
-</tr>
-<tr>
-<td>progressBarAutoRotateInterval</td>
-<td>进度图自动旋转间隔时间(单位：毫秒ms)</td>
-</tr>
-<tr>
-<td>failureImage</td>
-<td>失败图</td>
-</tr>
-<tr>
-<td>failureImageScaleType</td>
-<td>失败图的缩放类型</td>
-</tr>
-<tr>
-<td>retryImage</td>
-<td>重试图</td>
-</tr>
-<tr>
-<td>retryImageScaleType</td>
-<td>重试图的缩放类型</td>
-</tr>
-<tr>
-<td>backgroundImage</td>
-<td>背景图</td>
-</tr>
-<tr>
-<td>overlayImage</td>
-<td>叠加图</td>
-</tr>
-<tr>
-<td>pressedStateOverlayImage</td>
-<td>按压状态下所显示的叠加图</td>
-</tr>
-<tr>
-<td>roundAsCircle</td>
-<td>设置为圆形图</td>
-</tr>
-<tr>
-<td>roundedCornerRadius</td>
-<td>圆角半径</td>
-</tr>
-<tr>
-<td>roundTopLeft</td>
-<td>左上角是否为圆角</td>
-</tr>
-<tr>
-<td>roundTopRight</td>
-<td>右上角是否为圆角</td>
-</tr>
-<tr>
-<td>roundBottomLeft</td>
-<td>左下角是否为圆角</td>
-</tr>
-<tr>
-<td>roundBottomRight</td>
-<td>右下角是否为圆角</td>
-</tr>
-<tr>
-<td>roundingBorderWidth</td>
-<td>圆形或者圆角图边框的宽度</td>
-</tr>
-<tr>
-<td>roundingBorderColor</td>
-<td>圆形或者圆角图边框的颜色</td>
-</tr>
-<tr>
-<td>roundWithOverlayColor</td>
-<td>圆形或者圆角图底下的叠加颜色(只能设置颜色)</td>
-</tr>
-<tr>
-<td>viewAspectRatio</td>
-<td>控件纵横比</td>
+<td>adb connect 192.168.1.106</td>
+<td>通过WIFI连接手机（PS：192.168.1.106为你手机WIFI连接的IP地址）</td>
 </tr>
 </tbody>
 </table>
+<p>好了，到此为止，你就是能够解开USB数据线的困扰了，通过WIFI爽快的调试了！</p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果你那天不想用WIFI的方式了，你可以用以下的命令修改回USB连接：</p>
+<pre><code>adb usb
+</code></pre><p>参考：<a href="http://www.jianshu.com/p/3c1b97330150#" target="_blank" rel="external">http://www.jianshu.com/p/3c1b97330150#</a></p>
+<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p>ADB详细介绍：<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">https://developer.android.com/studio/command-line/adb.html</a></p>
 
         </div>
 
@@ -287,12 +217,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-06-26T08:02:00.171Z" itemprop="dateUpdated">2017-06-26 16:02:00</time>
+    最后更新时间：<time datetime="2017-05-27T03:06:56.810Z" itemprop="dateUpdated">2017-05-27 11:06:56</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" target="_blank" rel="external">http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/f356c74.html" target="_blank" rel="external">http://jkxy.club/post/f356c74.html</a>
         
     </div>
     <footer>
@@ -322,7 +252,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&title=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/f356c74.html&title=《Android通过WIFI连接真机调试》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -332,22 +262,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&title=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/f356c74.html&title=《Android通过WIFI连接真机调试》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/f356c74.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过WIFI连接真机调试》 — JKXY Blog&url=http://jkxy.club/post/f356c74.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/f356c74.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -370,18 +300,18 @@
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/06/27/Android中常用的特殊字符/" id="post-prev" class="post-nav-link">
+      <a href="/post/e0213c9c.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android中常用的特殊字符</h4>
+        <h4 class="title">Android透明度对比图</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/06/16/Android通过外网IP获取定位信息的几种方式/" id="post-next" class="post-nav-link">
+      <a href="/post/115198f6.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android通过外网IP获取定位信息的几种方式</h4>
+        <h4 class="title">Android设计模式之单例模式</h4>
       </a>
     </div>
   
@@ -499,7 +429,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&title=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/f356c74.html&title=《Android通过WIFI连接真机调试》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -509,22 +439,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&title=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/f356c74.html&title=《Android通过WIFI连接真机调试》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/f356c74.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Fresco中SimpleDraweeView的XML属性说明》 — JKXY Blog&url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过WIFI连接真机调试》 — JKXY Blog&url=http://jkxy.club/post/f356c74.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/06/26/Fresco中SimpleDraweeView的XML属性说明/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/f356c74.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -535,7 +465,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACvElEQVR42u3aQW7jQAwEwPz/07vAnnJYOd3kDGwEpZORWLZKBkSiya+v+Pjz7/j++vvx+qynd84+5+vGgYeHhze69Kfj9RckZz3dpvyqklv8eAvw8PDwrvGSYtAWjOTR374nvx48PDy8T+C9fkwnj/7Z5+Dh4eH9Dl7+CcmF5q0zHh4e3ufw8lhhRs0f/W2pOJa14OHh4XWZQD0Ae+/r6/M9PDw8vNFUfTbcakPhWTseXSceHh7eBV67UJX8Nx+hJd8yizaG+2J4eHh4AW8TByRntYtc7S9TrFvh4eHhXeDNItdT4/82Jo7KCR4eHt6beJvLbR/rSfEoigQeHh7eBV4SIuQ9ahtJ5A19giwaazw8PLw1L2mmc9jmZrWLU8PFAjw8PLxDvD1pc1ZbYNqShoeHh3eDtwlzixWo0bJCG+OuaiAeHh5eOWdvx/yznr0dvOWkH+oeHh4e3iHeprVtA4W2mc5HdNHvhoeHh7fmbdae2jA3eaDn50bFCQ8PD+8C73BXPgp881ghX/P6z2+Ih4eHd5SXRwb5UlQO2Df3w1gEDw8Pb8SbDbT24ex+ZSEqNnh4eHgXePmbkr/kMWsbc+TfXiwN4OHh4R3i5SOu2RdHF7QOjh8LAx4eHt6al0QGeRCQlJYZYBh84OHh4V3mnW2IZ03wLA5+/Hw8PDy8C7xNHNDeiPbS90M4PDw8vBu8WTPdttRtIcnDkR+QeHh4eBd4m+ihHfbnMW4eYRRn4eHh4R3izR7uZyPa2bAtGtfh4eHhXeDlR/5Ab9n7xrotUXh4eHh7XlsM8jggWcCaBbj5TcHDw8O7x9uvAhRztsWwrV3JwsPDw/s03maBYBOCFMUGDw8P76282fJTcil5kagHZnh4eHjXePuhV74ccGOZ4FjWgoeHh9dlp8VKU9I05210Ap6di4eHh3eU9xfcxdpPufFHeQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAByUlEQVR42u3aSW7DMAwF0Nz/0inQbRH5k5IZF3haBYaHpywIDnq94vX+Xevfn576dM/62a2Fi4u7zX0v1/rVf6+vn12/f23AxcWd5ybBa31nTskDIi4u7vO51XQn2R4uLu5/5yZX8sIGFxf3+dxempI3O/LNH6vVcHFxN7inGqb7KdFofxcXF7c1leg1T/PhSvnruLi4I9z9dsZOGZOXUoUX4eLibnPz8mNdkOQjll4mg4uLO8k928hIPtbb/EWKg4uLext3p2VZLZy2SilcXNxxbtLgyBF5wZMEPlxc3G9xk6Sk3HcptlcuAiguLu7N3GrRUg1qeXoUbRgXF3eEmwesHJof1cqPZEUVGy4u7iHuzqijmh7l6Q4uLu4TuPux8NTg5OIeXFzcEe66/EhwSZCq/hFRwxQXF/c2blLAJBvIC57qYQtcXNxvcXuNjOqwpNAMXQcyXFzcEW6+8vFJrzQqj09wcXFv4FYDytkCqZda4eLiznB7U9keJdnSRdMEFxd3kJsPU3ujl2rhFI1ScHFxH8A91f6ollLlXiwuLu6XuL2hS3QAa23DxcUd5OZNz94RzFObxMXFneHuNEyrw5L70iZcXNxD3B/qTS7luhS68wAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

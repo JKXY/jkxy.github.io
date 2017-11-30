@@ -12,27 +12,32 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/">
+    <link rel="canonical" href="http://jkxy.club/post/8d1f962d.html">
     
     
-    <title>Android通过WIFI连接真机调试 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>Android 广告跳过 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
+    <meta name="description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Android通过WIFI连接真机调试">
-<meta property="og:url" content="http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/index.html">
+<meta property="og:title" content="Android 广告跳过">
+<meta property="og:url" content="http://jkxy.club/post/8d1f962d.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
-<meta property="og:updated_time" content="2017-05-27T03:06:56.810Z">
+<meta property="og:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
+<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif">
+<meta property="og:image" content="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif">
+<meta property="og:image" content="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png">
+<meta property="og:updated_time" content="2017-11-29T09:03:44.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Android通过WIFI连接真机调试">
-<meta name="twitter:description" content="前言在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。 前提条件 手机和电脑必须在同一局域网内 配置好adb环境变量 手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb  执行命令   命令 说明">
+<meta name="twitter:title" content="Android 广告跳过">
+<meta name="twitter:description" content="前言前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。">
+<meta name="twitter:image" content="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -113,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Android通过WIFI连接真机调试</div>
+        <div class="flex-col header-title ellipsis">Android 广告跳过</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +140,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Android通过WIFI连接真机调试</h1>
+        <h1 class="title">Android 广告跳过</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-05-25T01:37:51.000Z" itemprop="datePublished" class="page-time">
-  2017-05-25
+                <time datetime="2017-11-18T05:52:06.000Z" itemprop="datePublished" class="page-time">
+  2017-11-18
 </time>
 
 
@@ -158,17 +163,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前提条件"><span class="post-toc-number">2.</span> <span class="post-toc-text">前提条件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#执行命令"><span class="post-toc-number">3.</span> <span class="post-toc-text">执行命令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-number">4.</span> <span class="post-toc-text">其他</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关资料"><span class="post-toc-number">5.</span> <span class="post-toc-text">相关资料</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#前言"><span class="post-toc-number">1.</span> <span class="post-toc-text">前言</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#思路"><span class="post-toc-number">2.</span> <span class="post-toc-text">思路</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#成果"><span class="post-toc-number">3.</span> <span class="post-toc-text">成果</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Android通过WIFI连接真机调试"
+<article id="post-Android广告跳过"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Android通过WIFI连接真机调试</h1>
+        <h1 class="post-card-title">Android 广告跳过</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-05-25 09:37:51" datetime="2017-05-25T01:37:51.000Z"  itemprop="datePublished">2017-05-25</time>
+            <time class="post-time" title="2017-11-18 13:52:06" datetime="2017-11-18T05:52:06.000Z"  itemprop="datePublished">2017-11-18</time>
 
             
 
@@ -181,35 +186,24 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在实际开发中，我们进行真机调试一般都是通过USB数据线进行连接，然而这种方式有很多不便之处，比如：连接经常断开，对充电口伤害大等等。如果有一种方式能够使我们不用USB数据线就好了，本篇文章就来告诉你如何通过WIFI连接进行真机调试。</p>
-<h3 id="前提条件"><a href="#前提条件" class="headerlink" title="前提条件"></a>前提条件</h3><ul>
-<li>手机和电脑必须在同一局域网内</li>
-<li>配置好adb环境变量</li>
-<li>手机和电脑通过USB数据线进行adb连接正常，不要让其他程序占用adb</li>
-</ul>
-<h3 id="执行命令"><a href="#执行命令" class="headerlink" title="执行命令"></a>执行命令</h3><table>
-<thead>
-<tr>
-<th>命令</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>adb tcpip 5555</td>
-<td>修改adb连接方式为WIFI连接（PS：这一步需要通过USB数据线和电脑正常连接，这步只需执行一次，下次不需要执行了）</td>
-</tr>
-<tr>
-<td>adb connect 192.168.1.106</td>
-<td>通过WIFI连接手机（PS：192.168.1.106为你手机WIFI连接的IP地址）</td>
-</tr>
-</tbody>
-</table>
-<p>好了，到此为止，你就是能够解开USB数据线的困扰了，通过WIFI爽快的调试了！</p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>如果你那天不想用WIFI的方式了，你可以用以下的命令修改回USB连接：</p>
-<pre><code>adb usb
-</code></pre><p>参考：<a href="http://www.jianshu.com/p/3c1b97330150#" target="_blank" rel="external">http://www.jianshu.com/p/3c1b97330150#</a></p>
-<h3 id="相关资料"><a href="#相关资料" class="headerlink" title="相关资料"></a>相关资料</h3><p>ADB详细介绍：<a href="https://developer.android.com/studio/command-line/adb.html" target="_blank" rel="external">https://developer.android.com/studio/command-line/adb.html</a></p>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>前段时间，去了一趟杭州找我朋友玩，出去在公交车上的时候，我也是和平常一样，拿出了手机，想刷一会知乎，但是当我打开知乎，出来的却是烦人的广告，这个广告“很贴心”的给了我们一个“跳过”按钮，让我们可以不要等待那么长的广告时间，于是我就去点击了那个按钮，但是，你们知道我这时正在公交车上呢，结果悲剧就来了，我居然点偏了，直接就进入了广告。发生这一幕，作为一个程序猿，这不能忍啊。</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://oqc1v7fbs.bkt.clouddn.com/timg.jpg" alt="" title="">
+                </div>
+                <div class="image-caption"></div>
+            </figure>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>于是我就在想怎么解决这个问题，回忆了一下其它针对广告的方案，发现大部分都是通过反编译实现的，但是这太复杂麻烦了，而且APP不能更新，更新了又要重新处理，感觉不是我理想的方式，于是又在想有没有其它的方案，这时我灵光一闪，他不是提供了“跳过”的按钮给我吗，我们自己去点击又累又烦，而且有时候会点偏，我可以做一个APP，让这个APP帮助我们去点这个按钮啊，岂不美哉！接下来，就要考虑要怎么实现了，我们来分析一下，有那些难点：</p>
+<ol>
+<li>怎么判断是在广告页面；</li>
+<li>怎么实现自动点击跳过按钮；</li>
+</ol>
+<p>分析到这两个问题，我立马就想到了Android手机的无障碍服务AccessibilityService，他完全可以处理两个问题啊，于是立马就开干。</p>
+<h3 id="成果"><a href="#成果" class="headerlink" title="成果"></a>成果</h3><p>在实现过程中，我发现实现起来比我想的麻烦的多，因为我们要去判断每个APP的广告页，而每个APP的跳过按钮又不一样，要想实现不同的APP跳过方案，就必须去一个一个的适配，这个过程其实是非常烦躁的，但一想到这是一劳永逸的事情，就又充满了干劲，在我的不懈努力下，目前适配了如下APP：   <code>知乎</code>、<code>智行火车票</code>、<code>一点资讯小米版</code>、<code>网易云音乐</code>、<code>斗鱼直播</code>、<code>熊猫直播</code>、<code>网易新闻</code>、<code>今日头条</code>、<code>腾讯视频</code>、<code>中国移动</code>、<code>中国联通</code>、<code>招商银行</code>、<code>中国建设银行</code>、<code>掌上生活</code>、<code>携程旅行</code>、<code>ofo共享单车</code>、<code>摩拜单车</code>、<code>内涵段子</code>、<code>搜狐视频</code>、<code>酷狗音乐</code>、<code>全民K歌</code>、<code>QQ空间</code>、<code>土豆视频</code>、<code>AcFun</code>、<code>百度网盘</code>、<code>火萤</code>、<code>安兔兔测评</code>、<code>百度浏览器</code>、<code>掌阅</code>、<code>起点读书</code>、<code>QQ阅读</code>、<code>懒人听书</code>、<code>喜马拉雅FM</code>、<code>追书神器</code>、<code>宜搜小说</code>、<code>知音漫客</code>、<code>腾讯动漫</code>、<code>美柚</code>、<code>饿了么</code>、<code>百度外卖</code>、<code>义乌购</code>、<code>当当</code>、<code>苏宁易购</code>、<code>闲鱼</code>、<code>WIFI万能钥匙</code>、<code>迅雷</code>、<code>豆瓣</code>、<code>京东金融</code>、<code>虾米音乐</code>、<code>一淘</code>、<code>美图秀秀</code>、<code>驾考宝典</code>、<code>米家有品</code>、<code>唯品会</code>、<code>唱吧</code>、<code>雪球股票</code>、<code>爱奇艺</code>、<code>花生地铁WIFI</code></p>
+<figure class="third"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_1.gif"><br>    <img src="http://oqdskvwmf.bkt.clouddn.com/adbreak_2.gif"><br>    <img src="http://oqc1v7fbs.bkt.clouddn.com/adbreak_3.png"><br></figure>
+
+<p>APK下载：<a href="http://oqdskvwmf.bkt.clouddn.com/adbreak.apk" target="_blank" rel="external">点我</a></p>
 
         </div>
 
@@ -217,12 +211,12 @@
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-05-27T03:06:56.810Z" itemprop="dateUpdated">2017-05-27 11:06:56</time>
+    最后更新时间：<time datetime="2017-11-29T09:03:44.114Z" itemprop="dateUpdated">2017-11-29 17:03:44</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/05/25/Android通过WIFI连接真机调试/" target="_blank" rel="external">http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/8d1f962d.html" target="_blank" rel="external">http://jkxy.club/post/8d1f962d.html</a>
         
     </div>
     <footer>
@@ -252,7 +246,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&title=《Android通过WIFI连接真机调试》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/8d1f962d.html&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -262,22 +256,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&title=《Android通过WIFI连接真机调试》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/8d1f962d.html&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/8d1f962d.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过WIFI连接真机调试》 — JKXY Blog&url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/post/8d1f962d.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/8d1f962d.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -297,21 +291,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/05/25/Android透明度对比图/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android透明度对比图</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/22/Android设计模式之单例模式/" id="post-next" class="post-nav-link">
+      <a href="/post/fe82999d.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">Android设计模式之单例模式</h4>
+        <h4 class="title">Android APK反编译、重新打包</h4>
       </a>
     </div>
   
@@ -429,7 +416,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&title=《Android通过WIFI连接真机调试》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/8d1f962d.html&title=《Android 广告跳过》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -439,22 +426,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&title=《Android通过WIFI连接真机调试》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/8d1f962d.html&title=《Android 广告跳过》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/8d1f962d.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android通过WIFI连接真机调试》 — JKXY Blog&url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Android 广告跳过》 — JKXY Blog&url=http://jkxy.club/post/8d1f962d.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/05/25/Android通过WIFI连接真机调试/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/8d1f962d.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -465,7 +452,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACuElEQVR42u3a0U7DMAwFUP7/p0HiCWlrubbjDaTTp2lqu5wgJeY6Hx/x9fl9PX7z80ruv3rz43seP1+94cCFh4eH1xr61XX/A1cDyp+qTmU+Zjw8PLxt3v3P3C/c83vmU3n5PR4eHt5befmynhTHVSQeHh7e/+VVt4E8wsgDETw8PLy/wEvCiHzbqG4P1TJ6JWvBw8PDi3mTRfldnxf7e3h4eHiDrnqyZPci4EmIXBgtHh4e3gIvL4J7sDy67U1idCceHh7eUV7vsd5SXm2SVSvkJyPBw8PDW+bl/+r3Bj1Z7qtTj4eHh7fNmzeW9sri/PjCkzvx8PDwFnjVRTmJFfJDWnkkUc5Xqj09PDw8vBYvD1vzKag2w/LGWHn7wcPDwzvEO7Uo50em7n+xV0BfIvHw8PBewquuqJOnkm1m0jDDw8PDeyWvF9dOgt2k7C7HtXh4eHhrvGrrq7eRTALc5gaDh4eHt8Drtb6S6Zg0wJLAd3ScCw8PD2/Am0exeQWbTNMkenhyDx4eHt4yLypGx4ex8unLt4FoY8DDw8M7xMvL0x6gF0BUm2e/xBl4eHh4R3mTJT4vu/OIIS+yo2fx8PDwXs6bvPpsvJs3t/Dw8PC2eXljqRrpngLMNxU8PDy8DV6vXM7Z+QGs6l+jEOPi4eHhHeLlD+clcnWJzwOR8oTi4eHhLfPKfbP4mje07kdYOFOGh4eHN+YlUexkQL1BRAOtpix4eHh4h3ifxasarVbflh9fiKYMDw8Pb4FXLYuToVfvn8QZ1S0NDw8P7xQvX757sWx16JPDCk++x8PDw1vjzdtXyTmF/Nm8RI7yFTw8PLw38XqLfuH8VzA15cNbeHh4eH+Mlze68glKAovCQQc8PDy8NV71ANb8/hdtIXh4eHhb1Wkzck2W7+Qnqy2xUTcPDw8Pr8/7Av63St/Qy79kAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABvUlEQVR42u3ay27CQAwFUP7/p6nULSW5toOJqjMr1EzhTBaWH/N4xOv5u14/v+45fprsvGDh4uKOuc/Ddcx9tz/ZmTz940i4uLiL3Dz05GGo9wpObLi4uDfjvtvfC4W4uLj/g1ulJIfExcW9MzcvTqqtk+PA98FaDRcXd8CdNEyv+rzU38XFxR1PJZKAkv/9OV64uLg73KQs6SUx+QGqjRJcXNxNbq8NWh2g9jIZXFzcTW61oZlwJ+OWEwkuLu4id4I+ToaSoJZ8Q/mt4OLijrnJ1l4alEALIRIXF/cG3F7Lo3qZo1yl4eLifpjbSzsm6Av+CxcX98PcXrMjR+eHTNIjXFzcTW6e9OQFTH7IQusEFxf3q9yoCAnSo8KYJCiKcHFxd7jVL71qcNIbyeDi4u5we0PWXgFzQWjDxcVd5OYtj+QYvWZrlELh4uIucvM1Gbs2R6rVux64uLhjbjWgTFqo1fFqb2SLi4t7FbcXvKpDlORpdB0EFxd3kZunKZOLGtX0CBcX9/7c+Q8npdFJeoSLi3tLbm9oWk5l3tlwcXEXuZNCpTo07b0UXFzcTW6vYdq7hFG9zIGLi7vO/QGr1U3U6M2tqAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

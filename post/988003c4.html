@@ -12,27 +12,27 @@
     <meta charset="utf-8">
     
     
-    <link rel="canonical" href="http://jkxy.club/2017/09/04/Monkey的使用/">
+    <link rel="canonical" href="http://jkxy.club/post/988003c4.html">
     
     
-    <title>Monkey的使用 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <title>记RecyclerView的notifyItemRemoved方法的坑 | JKXY Blog | 茫茫人海中的一枚程序员</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="Android">
-    <meta name="description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
+    <meta name="description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
 <meta name="keywords" content="Android">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Monkey的使用">
-<meta property="og:url" content="http://jkxy.club/2017/09/04/Monkey的使用/index.html">
+<meta property="og:title" content="记RecyclerView的notifyItemRemoved方法的坑">
+<meta property="og:url" content="http://jkxy.club/post/988003c4.html">
 <meta property="og:site_name" content="JKXY Blog">
-<meta property="og:description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
-<meta property="og:updated_time" content="2017-09-04T03:47:13.076Z">
+<meta property="og:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
+<meta property="og:updated_time" content="2017-06-26T08:02:45.126Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Monkey的使用">
-<meta name="twitter:description" content="基本介绍Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。 Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在">
+<meta name="twitter:title" content="记RecyclerView的notifyItemRemoved方法的坑">
+<meta name="twitter:description" content="在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。 具体情况当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下">
     
         <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
     
@@ -113,7 +113,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">Monkey的使用</div>
+        <div class="flex-col header-title ellipsis">记RecyclerView的notifyItemRemoved方法的坑</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -135,11 +135,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">Monkey的使用</h1>
+        <h1 class="title">记RecyclerView的notifyItemRemoved方法的坑</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-09-04T03:41:58.000Z" itemprop="datePublished" class="page-time">
-  2017-09-04
+                <time datetime="2017-06-08T04:34:41.000Z" itemprop="datePublished" class="page-time">
+  2017-06-08
 </time>
 
 
@@ -158,17 +158,17 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本介绍"><span class="post-toc-number">1.</span> <span class="post-toc-text">基本介绍</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基本命令"><span class="post-toc-number">2.</span> <span class="post-toc-text">基本命令</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#具体情况"><span class="post-toc-number">1.</span> <span class="post-toc-text">具体情况</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方法</span></a></li></ol>
         </nav>
     </aside>
     
-<article id="post-Monkey的使用"
+<article id="post-记RecyclerView的notifyItemRemoved方法的坑"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">Monkey的使用</h1>
+        <h1 class="post-card-title">记RecyclerView的notifyItemRemoved方法的坑</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-09-04 11:41:58" datetime="2017-09-04T03:41:58.000Z"  itemprop="datePublished">2017-09-04</time>
+            <time class="post-time" title="2017-06-08 12:34:41" datetime="2017-06-08T04:34:41.000Z"  itemprop="datePublished">2017-06-08</time>
 
             
 
@@ -181,63 +181,27 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h3 id="基本介绍"><a href="#基本介绍" class="headerlink" title="基本介绍"></a>基本介绍</h3><p>Monkey就是猴子，  Monkey测试，就像一只猴子， 在电脑面前，乱敲键盘在测试。  猴子什么都不懂， 只知道乱敲<br>通过Monkey程序模拟用户触摸屏幕、滑动Trackball、 按键等操作来对设备上的程序进行压力测试，检测程序多久的时间会发生异常。</p>
-<p>Monkey是一个命令行工具，可以运行在模拟器里或实际设备中，使用安卓调试桥(adb)来运行它，向系统发送伪随机的用户事件流，实现对正在开发的应用程序进行压力测试，可以根据获取的log信息进行修复。</p>
-<p> Monkey程序由Android系统自带，使用Java语言写成，在Android文件系统中的存放路径是： /system/framework/monkey.jar；</p>
-<p>Monkey.jar程序是由一个名为“monkey”的Shell脚本来启动执行，shell脚本在Android文件系统中 的存放路径是：/system/bin/monkey；  </p>
-<p>Monkey 命令启动方式：   </p>
-<p>可以通过PC机CMD窗口中执行: adb shell monkey ｛+命令参数｝来进行Monkey测试          </p>
-<p>在PC上adb shell 进入Android系统，通过执行 monkey {+命令参数} 来进行Monkey 测试          </p>
-<p>在Android机或者模拟器上直接执行monkey 命令，可以在Android机上安装Android终端模拟器  </p>
-<h3 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h3><pre><code>`-help` 列出简单用法
-
-`-v`   
-作用： 命令行上的每一个-v都将增加反馈信息的详细级别。
-Level1（默认），除了启动、测试完成和最终结果外只提供较少的信息。
-Level2，提供了较为详细的测试信息，如逐个发送到Activity的事件信息。
-Level3，提供了更多的设置信息，如测试中选中或未选中的Activity信息。
-例：
-adb shell monkey -v 10 
-adb shell monkey -v -v 10 
-adb shell monkey -v -v -v 10
-
-`-s` &lt;seed&gt;
-作用：伪随机数生成器的seed值。如果用相同的seed值再次运行monkey，将生成相同的事件序列。
-例： adb shell monkey -s 12345 -v 10 
-
---throttle &lt;milliseconds&gt;
-作用：在事件之间插入固定的时间（毫秒）延迟，你可以使用这个设置来减缓Monkey的运行速度，如果你不指定这个参数，则事件之间将没有延迟，事件将以最快的速度生成。
-
-例： adb shell monkey –throttle 300 -v 10
-注：常用参数，一般设置为300毫秒，原因是实际用户操作的最快300毫秒左右一个动作事件，所以此处一般设置为300毫秒。
-
--p &lt;allowed-package-name&gt;
-作用：如果你指定一个或多个包，Monkey将只允许访问这些包中的Activity。如果你的应用程序需要访问这些包(如选择联系人)以外的Activity，你需要指定这些包。如果你不指定任何包，Monkey将允许系统启动所有包的Activity。指定多个包，使用多个-p，一个-p后面接一个包名。
-例： adb shell monkey -p com.android.browser -v 10 
-
--c &lt;main-category&gt;
-作用：如果你指定一个或多个类别，Monkey将只允许系统启动这些指定类别中列出的Activity。如果你不指定任何类别，Monkey将选择谢列类别中列出的Activity，Intent.CATEGORY_LAUNCHER和Intent.CATEGORY_MONKEY。指定多个类别使用多个-c，每个-c指定一个类别。
-例： adb shell monkey -p com.paipai.ershou -v 10 -c 
-
---pct-touch &lt;percent&gt;
-作用：调整触摸事件的百分比。（触摸事件是指在屏幕中的一个down-up事件，即在屏幕某处按下并抬起的操作）
-例： adb shell monkey –pct-touch 100 -v 10
-注：常用参数，此参数设置要适应当前被测应用程序的操作，比如一个应用80%的操作都是触摸，那就可以将此参数的百分比设置成相应较高的百分比。
-
---pct-motion &lt;percent&gt;
-作用：调整motion事件百分比。（motion事件是由屏幕上某处一个down事件、一系列伪随机的移动事件和一个up事件组成）
-例： adb shell monkey –pct-motion 100 -v 10
-注：常用参数，需注意的是移动事件是直线滑动，下面的trackball移动包含曲线移动。
-
---ignore-crashes
-作用：通常，应用发生崩溃或异常时Monkey会停止运行。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。
-
---ignore-timeouts
-作用：事件请求超时会影响monkey的测试。如果设置此项，Monkey将继续发送事件给系统，直到事件计数完成。
-
-保存测试日志
-adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
-</code></pre><p>参考：<a href="https://developer.android.com/studio/test/monkey.html" target="_blank" rel="external">https://developer.android.com/studio/test/monkey.html</a></p>
+            <p>在我们使用 RecyclerView 时需要删除一条数据时，RecyclerView 很是友好的给我们提供了 notifyItemRemoved 方法，且带有动画效果，但是当使用完之后你就会发现前方有一个坑在等着你。</p>
+<h3 id="具体情况"><a href="#具体情况" class="headerlink" title="具体情况"></a>具体情况</h3><p>当我们使用 notifyItemRemoved 方法后，该方法不会使 position 及其之后位置的 vitemiew 重新 onBindViewHolder。所以会导致下标错乱，然后各种坑爹的bug就来了。</p>
+<p>就像这样：</p>
+<ol>
+<li>现在有1，2，3，4个数据.</li>
+<li>你第一次删，比如删掉2，这次删除结果是对的，位置2的view消失，数据里原有的第2项也被删除。</li>
+<li>接下来你再删除现在的第2项（原来的第三项）时，调试你会发现，由于绑定时 contentList.remove(position); notifyItemRemoved(position); 这里记住的postion是3，那么这次被删除的数据项会是现有的数据列表的第三项（应该是第二项的）。</li>
+</ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><pre><code>public void remove(int position) {
+        mDataList.remove(position);
+        notifyItemRemoved(position);
+        if(position != mDataList.size()){ // 如果移除的是最后一个，忽略
+            notifyItemRangeChanged(position, mDataList.size() - position);
+        }
+}
+</code></pre><p>remove：把数据从 list 中 remove 掉</p>
+<p>notifyItemRemoved：列表删除 View 且显示动画效果 </p>
+<p>notifyItemRangeChanged：对于被删掉的位置及其后 range 大小范围内的 view 进行重新 onBindViewHolder</p>
+<p>参考：</p>
+<p><a href="http://blog.csdn.net/wangkai0681080/article/details/50082825" target="_blank" rel="external">http://blog.csdn.net/wangkai0681080/article/details/50082825</a></p>
+<p><a href="http://www.2cto.com/kf/201608/534945.html" target="_blank" rel="external">http://www.2cto.com/kf/201608/534945.html</a></p>
 
         </div>
 
@@ -245,12 +209,12 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
     <div class="content">
         
 <span class="post-time">
-    最后更新时间：<time datetime="2017-09-04T03:47:13.076Z" itemprop="dateUpdated">2017-09-04 11:47:13</time>
+    最后更新时间：<time datetime="2017-06-26T08:02:45.126Z" itemprop="dateUpdated">2017-06-26 16:02:45</time>
 </span><br>
 
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2017/09/04/Monkey的使用/" target="_blank" rel="external">http://jkxy.club/2017/09/04/Monkey的使用/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/post/988003c4.html" target="_blank" rel="external">http://jkxy.club/post/988003c4.html</a>
         
     </div>
     <footer>
@@ -280,7 +244,7 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/988003c4.html&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -290,22 +254,22 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/988003c4.html&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/988003c4.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monkey的使用》 — JKXY Blog&url=http://jkxy.club/2017/09/04/Monkey的使用/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/post/988003c4.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/988003c4.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -328,18 +292,18 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
 <nav class="post-nav flex-row flex-justify-between">
   
     <div class="waves-block waves-effect prev">
-      <a href="/2017/09/15/Android APK反编译、重新打包/" id="post-prev" class="post-nav-link">
+      <a href="/post/532ab633.html" id="post-prev" class="post-nav-link">
         <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Android APK反编译、重新打包</h4>
+        <h4 class="title">Android通过外网IP获取定位信息的几种方式</h4>
       </a>
     </div>
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/08/03/仿探探小Demo/" id="post-next" class="post-nav-link">
+      <a href="/post/e0213c9c.html" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">仿探探小Demo</h4>
+        <h4 class="title">Android透明度对比图</h4>
       </a>
     </div>
   
@@ -457,7 +421,7 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/988003c4.html&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -467,22 +431,22 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/2017/09/04/Monkey的使用/&title=《Monkey的使用》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/988003c4.html&title=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/988003c4.html" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Monkey的使用》 — JKXY Blog&url=http://jkxy.club/2017/09/04/Monkey的使用/&via=http://jkxy.club" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《记RecyclerView的notifyItemRemoved方法的坑》 — JKXY Blog&url=http://jkxy.club/post/988003c4.html&via=http://jkxy.club" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/2017/09/04/Monkey的使用/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/988003c4.html" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -493,7 +457,7 @@ adb shell monkey -p com.ihongqiqu -v -v -v 500 &gt; test.txt
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS27DMAxF0ex/0+4K5NxHqgFEXY+KwJZ1PGDFz+eDr+f1Wt3JV+PPti4ZMmQcyyBbfP+FvHi1Aod9eaMMGTIuYKxe/P7K9ztTGF9NhgwZMgiDBEoemtOPIkOGDBm7Au57iss/gQwZMmSkS9dKYyTg/igXlyFDxoEMvonf//0v/Q0ZMmQcxXjCiwfKzkEw3pUMGTJGM3iAqx3IthX9yX5kyJAxlMFTx/RUxscsyJ1fYDJkyLiSkQZEvk5atiPPypAh4x4Gb0/uSk3Jpkm4lyFDxmxGf4m0KMabo8U0WIYMGdcwailurXlQ61TGFT4ZMmQcyyBHuk7iytNjHmSDE64MGTJGMMihMC2W8UBMGEHTQoYMGaMZaZm+1oxMhyrSIC5DhoypjFoDgAdNvj4/OKJDoQwZMgYxeBBMhyTSRmZnUEOGDBmzGZ2hh06yWhu/aIVXGTJkHM5Ii1m1rfRbmMvPKkOGjNGMNGr1i3H9sTB0tpUhQ8Y4RmfMdG97MoUF/z1kyJAxgtE5zPHhsPQw+oBLhgwZtzFIob9WaEsbmcXsVoYMGeMYT3iRZ9NxCh7u0dlWhgwZ4xj9cjyn9stt8XCYDBkyBjF4qlkLkelRshhwZciQcQGjn9yS0j/5hafBMmTIkNGa3QhHMXgjc8mWIUOGjDBBJZvmYbfYiZUhQ8Y4Bi/0p6WxWpMybUXIkCFjNqMzkNFJStNtbetvyJAh4yTGHxI8A/Hq3Pe0AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aS27DMAwFwNz/0u0BWsuPpCUYwXgVaCGNsiD40ecTfz/F72qHv7t9dny4uLhjbnJwvp7ss77AzeVxcXEPcpPQk1wyD1vr/S/XcXFxX88th6GLC+Di4n4Hd72eJzS4uLhv5s6LljxgVYsoXFzc89y8S7nv95b+Li4ubovbG5DkYW7SJP3ndFxc3CPcPKD00L0m6fpcXFzc3dzk+F4bdA2tZjLRCw5cXNyHuL0iZwLNh7URGhcXdwO3mRO12qb5npfJEy4u7hFutUlaTYN6jzaSi+Hi4u7m9g6oPt2YPNQY5VO4uLhFbt7C6D2MqA5dbq6Ki4t7hJuXIpMBSbWlchMucXFxN3PzNkS1sOkNS25WcHFxj3B7SUl1yDq5XjRkxcXF3cCtljTVqz71pAMXF/c8dx4rquVTPobBxcV9G7eaxMwLpCgLw8XF3cbthZX5aLYZLnFxcY9we4VNdchafXKRhFRcXNzd3Gr5kQe4SSC7/FNwcXEPcvNA0xuOTsLfTVsEFxf3Ndx5MtS8Ei4u7iu5eS3Va3Y8HMhwcXEH3KT4SYqiJLRVwyUuLu55bjW4rDfKE6Dq+BYXF/cI9xei4Sn4eitN/gAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
