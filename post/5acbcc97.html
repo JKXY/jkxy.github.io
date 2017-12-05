@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/post/5acbcc97.html">
+    
+    
+    <title>软件开发模式对比(瀑布、迭代、螺旋、敏捷) | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="其它">
+    <meta name="description" content="来源：https://www.cnblogs.com/tianguook/p/4004726.html http://www.mamicode.com/info-detail-556125.html 瀑布模型瀑布模型是由W.W.Royce在1970年最初提出的软件开发模型，瀑布式开发是一种老旧的计算机软件开发方法。瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试">
+<meta name="keywords" content="其它">
+<meta property="og:type" content="article">
+<meta property="og:title" content="软件开发模式对比(瀑布、迭代、螺旋、敏捷)">
+<meta property="og:url" content="http://jkxy.club/post/5acbcc97.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="来源：https://www.cnblogs.com/tianguook/p/4004726.html http://www.mamicode.com/info-detail-556125.html 瀑布模型瀑布模型是由W.W.Royce在1970年最初提出的软件开发模型，瀑布式开发是一种老旧的计算机软件开发方法。瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试">
+<meta property="og:updated_time" content="2017-12-05T03:02:04.005Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="软件开发模式对比(瀑布、迭代、螺旋、敏捷)">
+<meta name="twitter:description" content="来源：https://www.cnblogs.com/tianguook/p/4004726.html http://www.mamicode.com/info-detail-556125.html 瀑布模型瀑布模型是由W.W.Royce在1970年最初提出的软件开发模型，瀑布式开发是一种老旧的计算机软件开发方法。瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">软件开发模式对比(瀑布、迭代、螺旋、敏捷)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">软件开发模式对比(瀑布、迭代、螺旋、敏捷)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2017-12-05T02:51:21.000Z" itemprop="datePublished" class="page-time">
+  2017-12-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#瀑布模型"><span class="post-toc-number">1.</span> <span class="post-toc-text">瀑布模型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#迭代式开发"><span class="post-toc-number">2.</span> <span class="post-toc-text">迭代式开发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#螺旋开发"><span class="post-toc-number">3.</span> <span class="post-toc-text">螺旋开发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#敏捷软件开发"><span class="post-toc-number">4.</span> <span class="post-toc-text">敏捷软件开发</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四者对比区别"><span class="post-toc-number">5.</span> <span class="post-toc-text">四者对比区别</span></a></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-软件开发模式对比"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">软件开发模式对比(瀑布、迭代、螺旋、敏捷)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2017-12-05 10:51:21" datetime="2017-12-05T02:51:21.000Z"  itemprop="datePublished">2017-12-05</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>来源：<br><a href="https://www.cnblogs.com/tianguook/p/4004726.html" target="_blank" rel="external">https://www.cnblogs.com/tianguook/p/4004726.html</a></p>
+<p><a href="http://www.mamicode.com/info-detail-556125.html" target="_blank" rel="external">http://www.mamicode.com/info-detail-556125.html</a></p>
+<h3 id="瀑布模型"><a href="#瀑布模型" class="headerlink" title="瀑布模型"></a>瀑布模型</h3><p>瀑布模型是由W.W.Royce在1970年最初提出的软件开发模型，瀑布式开发是一种老旧的计算机软件开发方法。瀑布模型式是最典型的预见性的方法，严格遵循预先计划的需求分析、设计、编码、集成、测试、维护的步骤顺序进行。步骤成果作为衡量进度的方法，例如需求规格，设计文档，测试计划和代码审阅等等。</p>
+<p>瀑布式的主要的问题是它的严格分级导致的自由度降低，项目早期即作出承诺导致对后期需求的变化难以调整，代价高昂。瀑布式方法在需求不明并且在项目进行过程中可能变化的情况下基本是不可行的。 </p>
+<p>瀑布模型的特点（传统的开发方式）：</p>
+<ol>
+<li>强调文档，前一个阶段的输出就是下一个阶段的输入，文档是个阶段衔接的唯一信息。所以很多开发人员好象是在开发文档，而不是开发软件，因为要到开发的后期才可以看到软件的“模样”。</li>
+<li>没有迭代与反馈。瀑布模型对反馈没有涉及，所以对变化的客户需求非常不容易适应。瀑布就意味着没有回头路。</li>
+<li>管理人员喜欢瀑布模型的原因是把文档理解为开发的速度，可以方便地界定不同阶段的里程碑。</li>
+</ol>
+<h3 id="迭代式开发"><a href="#迭代式开发" class="headerlink" title="迭代式开发"></a>迭代式开发</h3><p>迭代式开发也被称作迭代增量式开发或迭代进化式开发，是一种与传统的瀑布式开发相反的软件开发过程，它弥补了传统开发方式中的一些弱点，具有更高的成功率和生产率。</p>
+<p>什么是迭代式开发？<br>    每次只设计和实现这个产品的一部分,<br>    逐步逐步完成的方法叫迭代开发,<br>    每次设计和实现一个阶段叫做一个迭代.<br>    在迭代式开发方法中，整个开发工作被组织为一系列的短小的、<br>    固定长度（如3周）的小项目，被称为一系列的迭代。<br>    每一次迭代都包括了需求分析、设计、实现与测试。<br>    采用这种方法，开发工作可以在需求被完整地确定之前启动，<br>    并在一次迭代中完成系统的一部分功能或业务逻辑的开发工作。<br>    再通过客户的反馈来细化需求，并开始新一轮的迭代。</p>
+<p>迭代式开发的优点：</p>
+<ol>
+<li>降低风险</li>
+<li>得到早期用户反馈</li>
+<li>持续的测试和集成</li>
+<li>使用变更</li>
+<li>提高复用性</li>
+</ol>
+<h3 id="螺旋开发"><a href="#螺旋开发" class="headerlink" title="螺旋开发"></a>螺旋开发</h3><p>螺旋开发，1988年，巴利·玻姆(Barry Boehm)正式发表了软件系统开发的“螺旋模型”，它将瀑布模型和快速原型模型结合起来，强调了其他模型所忽视的风险分析，特别适合于大型复杂的系统。<br>“螺旋模型”刚开始规模很小，当项目被定义得更好、更稳定时，逐渐展开。 </p>
+<p>“螺旋模型”的核心就在于您不需要在刚开始的时候就把所有事情都定义的清清楚楚。您轻松上阵，定义最重要的功能，实现它，然后听取客户的意见，之后再进入到下一个阶段。如此不断轮回重复，直到得到您满意的最终产品。 </p>
+<p>（1）制定计划：确定软件目标，选定实施方案，弄清项目开发的限制条件； </p>
+<p>（2）风险分析：分析评估所选方案，考虑如何识别和消除风险； </p>
+<p>（3）实施工程：实施软件开发和验证； </p>
+<p>（4）客户评估：评价开发工作，提出修正建议，制定下一步计划。 </p>
+<p>螺旋模型很大程度上是一种风险驱动的方法体系，因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估。</p>
+<p>　</p>
+<h3 id="敏捷软件开发"><a href="#敏捷软件开发" class="headerlink" title="敏捷软件开发"></a>敏捷软件开发</h3><p>敏捷软件开发又称敏捷开发， 是一种从1990年代开始逐渐引起广泛关注的一些新型软件开发方法，是一种应对快速变化的需求的一种软件开发能力。它们的具体名称、理念、过程、术语都不 尽相同，相对于“非敏捷”，更强调程序员团队与业务专家之间的紧密协作、面对面的沟通（认为比书面的文档更有效）、频繁交付新的软件版本、紧凑而自我组织 型的团队、能够很好地适应需求变化的代码编写和团队组织方法，也更注重软件开发中人的作用。</p>
+<p><strong>人和交互</strong> 重于过程和工具。</p>
+<p><strong>可以工作的软件</strong> 重于求全而完备的文档。</p>
+<p><strong>客户协作</strong> 重于合同谈判。</p>
+<p><strong>随时应对变化</strong> 重于循规蹈矩。</p>
+<p>其中位于右边的内容虽然也有其价值，但是左边的内容最为重要。<br>人员彼此信任 人少但是精干 可以面对面的沟通</p>
+<p>项目的敏捷开发：<br>敏捷开发小组主要的工作方式可以归纳为：作为一个整体工作； 按短迭代周期工作； 每次迭代交付一些成果； 关注业务优先级； 检查与调整。</p>
+<p>最重要的因素恐怕是项目的规模。规模增长，面对面的沟通就愈加困难，<br>因此敏捷方法更适用于较小的队伍，40、30、20、10人或者更少。<br>大规模的敏捷软件开发尚处于积极研究的领域。</p>
+<p>敏捷开发集成了新型开发模式的共同特点，它重点强调：</p>
+<ol>
+<li>敏捷就是“快”。快才可以适应目前社会的快节奏，要快就要发挥个人的个性思维多一些个性思维的增多。</li>
+<li>客户参与。以人为本，客户是软件的使用者，是业务理解的专家，没有客户的参与，开发者很难理解客户的真实需求。</li>
+<li>强调软件开发的产品是软件，而不是文档。文档是为软件开发服务的，而不是开发的主体。</li>
+<li>设计周密是为了最终软件的质量，但不表明设计比实现更重要。</li>
+<li>迭代。软件的功能是客户的需求，界面的操作是客户的“感觉”。对迭代的强调是缩短了软件版本的周期。</li>
+<li>小版本。快速功能的展现，看似简单，但对于复杂的客户需求合理地分割与总体上的统一，要很好地二者兼顾是不容易的。</li>
+</ol>
+<h3 id="四者对比区别"><a href="#四者对比区别" class="headerlink" title="四者对比区别"></a>四者对比区别</h3><ul>
+<li>传统的瀑布式开发，也就是从需求到设计，从设计到编码，从编码到测试，从测试到提交大概这样的流程，要求每一个开发阶段都要做到最好。特别是前期阶段，设计的越完美，提交后的成本损失就越少。</li>
+<li>迭代式开发，不要求每一个阶段的任务做的都是最完美的，而是明明知道还有很多不足的地方，却偏偏不去完善它，而是把主要功能先搭建起来为目的，以最短的时间，</li>
+<li>最少的损失先完成一个“不完美的成果物”直至提交。然后再通过客户或用户的反馈信息，在这个“不完美的成果物”上逐步进行完善。</li>
+<li>螺旋开发，很大程度上是一种风险驱动的方法体系，因为在每个阶段之前及经常发生的循环之前，都必须首先进行风险评估。</li>
+<li>敏捷开发，相比迭代式开发两者都强调在较短的开发周期提交软件，但是，敏捷开发的周期可能更短，并且更加强调队伍中的高度协作。敏捷方法有时候被误认为是无计划性和纪律性的方法，实际上更确切的说法是敏捷方法强调适应性而非预见性。 </li>
+<li>适应性的方法集中在快速适应现实的变化。当项目的需求起了变化，团队应该迅速适应。这个团队可能很难确切描述未来将会如何变化.</li>
+</ul>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2017-12-05T03:02:04.005Z" itemprop="dateUpdated">2017-12-05 11:02:04</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/post/5acbcc97.html" target="_blank" rel="external">http://jkxy.club/post/5acbcc97.html</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/其它/">其它</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/5acbcc97.html&title=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/5acbcc97.html&title=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/5acbcc97.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&url=http://jkxy.club/post/5acbcc97.html&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/5acbcc97.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/8d1f962d.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Android 广告跳过</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "j8im6Y6nmJuQcJagMJgc0XnN-gzGzoHsz",
+            appKey: "pvkgrRDEzKghfnOwdJ3iRlmj",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>JKXY &copy; 2017</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" style="font-weight: bold" target="_blank">indigo</a>
+				Hosted by <a href="https://pages.coding.me" style="font-weight: bold" target="_blank">Coding Pages</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/5acbcc97.html&title=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/5acbcc97.html&title=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/5acbcc97.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《软件开发模式对比(瀑布、迭代、螺旋、敏捷)》 — JKXY Blog&url=http://jkxy.club/post/5acbcc97.html&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/5acbcc97.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABw0lEQVR42u3aQY6EMAxEUe5/aUaa7SjwK8YGjX5WCLXgpRdWXOY48Dp/F7lD7q9++diSK1dumXterr84ck22tNrA6jdy5cqd514Xr5tHgJqTbnV5X65cuR/jkiMLL4Vy5cr9H1zSxhDua3VXrly5IZeUoRTNY5GWXk2uXLkFbhqYdlw35rty5coNuWe4SJEiR5a9JVeu3BkuH4F0VMq9oESuXLnd3GcPKzwQSU8ycuXKneTWm5P0GESCj5s7cuXKHeRWPs9Kt8GHKHG+K1eu3DK3MrR4atxCitoyxZErV24blx8v+IcaaQgStz1y5cpt5pJylr5gL4S9KaZy5cod5JIgozJeTduk5XvlypU7zuWHksom0yZKrly573J5nEFelgYfqDjKlSt3hHt9KEnbFd4ClZouuXLlNnN52JGWvEprtPwL5MqVO8glzU8acxwPLbly5b7F5WtvS+T4gjYpV67cEW5aUCpRSPphRzB8lStXbgM3GHPigri3MRSvyJUrd5C7N2QtDUVw+yRXrtwvc/knFBzNA1m5cuV+mctbHT6S4YMWuXLlTnLTR9eHsumfIleu3EluJTBNt5qOWOTKlTvO/QF6IWzDPoMH/AAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
