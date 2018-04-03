@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+
+
+
+    <meta charset="utf-8">
+    
+    
+    <link rel="canonical" href="http://jkxy.club/post/f00095c8.html">
+    
+    
+    <title>android gradle 3.0.0 中依赖指令implementation、api 的区别 | JKXY Blog | 茫茫人海中的一枚程序员</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="Android">
+    <meta name="description" content="转载：https://blog.csdn.net/Next_Second/article/details/78428086 AndroidStudio升级到3.0之后，gradle版本也随之升级到了3.0.0版本。 classpath &amp;apos;com.android.tools.build:gradle:3.0.0&amp;apos; 在新建一个Android工程的时候，build.gradle中的依">
+<meta name="keywords" content="Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="android gradle 3.0.0 中依赖指令implementation、api 的区别">
+<meta property="og:url" content="http://jkxy.club/post/f00095c8.html">
+<meta property="og:site_name" content="JKXY Blog">
+<meta property="og:description" content="转载：https://blog.csdn.net/Next_Second/article/details/78428086 AndroidStudio升级到3.0之后，gradle版本也随之升级到了3.0.0版本。 classpath &amp;apos;com.android.tools.build:gradle:3.0.0&amp;apos; 在新建一个Android工程的时候，build.gradle中的依">
+<meta property="og:updated_time" content="2018-04-03T03:22:41.718Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="android gradle 3.0.0 中依赖指令implementation、api 的区别">
+<meta name="twitter:description" content="转载：https://blog.csdn.net/Next_Second/article/details/78428086 AndroidStudio升级到3.0之后，gradle版本也随之升级到了3.0.0版本。 classpath &amp;apos;com.android.tools.build:gradle:3.0.0&amp;apos; 在新建一个Android工程的时候，build.gradle中的依">
+    
+        <link rel="alternate" type="application/atom+xml" title="JKXY Blog" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+</head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">JKXY</h5>
+          <a href="mailto:771351897@qq.com" title="771351897@qq.com" class="mail">771351897@qq.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                主页
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                目录
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                标签
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/JKXY" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="http://www.jianshu.com/users/e6c9399e0eb4/timeline" target="_blank" >
+                <i class="icon icon-lg icon-link"></i>
+                简书
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">android gradle 3.0.0 中依赖指令implementation、api 的区别</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">android gradle 3.0.0 中依赖指令implementation、api 的区别</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2018-04-03T03:21:07.000Z" itemprop="datePublished" class="page-time">
+  2018-04-03
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#api-指令"><span class="post-toc-number">1.</span> <span class="post-toc-text">api 指令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#implementation指令"><span class="post-toc-number">2.</span> <span class="post-toc-text">implementation指令</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#建议"><span class="post-toc-number">3.</span> <span class="post-toc-text">建议</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#其它"><span class="post-toc-number">4.</span> <span class="post-toc-text">其它</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#apk（runtimeOnly）"><span class="post-toc-number">4.0.1.</span> <span class="post-toc-text">apk（runtimeOnly）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#testCompile（testImplementation）"><span class="post-toc-number">4.0.2.</span> <span class="post-toc-text">testCompile（testImplementation）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#debugCompile（debugImplementation）"><span class="post-toc-number">4.0.3.</span> <span class="post-toc-text">debugCompile（debugImplementation）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#releaseCompile（releaseImplementation）"><span class="post-toc-number">4.0.4.</span> <span class="post-toc-text">releaseCompile（releaseImplementation）</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+<article id="post-android gradle 3.0.0 中依赖指令implementation、api 的区别"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">android gradle 3.0.0 中依赖指令implementation、api 的区别</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2018-04-03 11:21:07" datetime="2018-04-03T03:21:07.000Z"  itemprop="datePublished">2018-04-03</time>
+
+            
+
+
+            
+<span id="busuanzi_container_page_pv" title="文章总阅读量" style='display:none'>
+    <i class="icon icon-eye icon-pr"></i><span id="busuanzi_value_page_pv"></span>
+</span>
+
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>转载：<a href="https://blog.csdn.net/Next_Second/article/details/78428086" target="_blank" rel="external">https://blog.csdn.net/Next_Second/article/details/78428086</a></p>
+<p>AndroidStudio升级到3.0之后，gradle版本也随之升级到了3.0.0版本。</p>
+<pre><code>classpath &apos;com.android.tools.build:gradle:3.0.0&apos;
+</code></pre><p>在新建一个Android工程的时候，build.gradle中的依赖默认为implementation，而不是之前的compile。另外，gradle 3.0.0版本以上，还有依赖指令api。本文主要介绍下implementation和api的区别。</p>
+<p>新建工程默认生成的app的build.gradle文件中的依赖：</p>
+<pre><code>dependencies {
+    implementation fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)
+    implementation &apos;com.android.support:appcompat-v7:26.1.0&apos;
+    implementation &apos;com.android.support.constraint:constraint-layout:1.0.2&apos;
+    testImplementation &apos;junit:junit:4.12&apos;
+    androidTestImplementation &apos;com.android.support.test:runner:1.0.1&apos;
+    androidTestImplementation &apos;com.android.support.test.espresso:espresso-core:3.0.1&apos;
+}
+</code></pre><h2 id="api-指令"><a href="#api-指令" class="headerlink" title="api 指令"></a>api 指令</h2><p>完全等同于compile指令，没区别，你将所有的compile改成api，完全没有错。</p>
+<h2 id="implementation指令"><a href="#implementation指令" class="headerlink" title="implementation指令"></a>implementation指令</h2><p>这个指令的特点就是，对于使用了该命令编译的依赖，对该项目有依赖的项目将无法访问到使用该命令编译的依赖中的任何程序，也就是将该依赖隐藏在内部，而不对外部公开。</p>
+<p>简单的说，就是使用implementation指令的依赖不会传递。例如，有一个module为testsdk，testsdk依赖于gson：</p>
+<pre><code>implementation &apos;com.google.code.gson:gson:2.8.2&apos;
+</code></pre><p>这时候，在testsdk里边的java代码是可以访问gson的。</p>
+<p>另一个module为app，app依赖于testsdk：</p>
+<pre><code>implementation project(&apos;:testsdk&apos;)
+</code></pre><p>这时候，因为testsdk使用的是implementation 指令来依赖gson，所以app里边不能引用gson。</p>
+<p>但是，如果testsdk使用的是api来引用gson：</p>
+<pre><code>api &apos;com.google.code.gson:gson:2.8.2&apos;
+</code></pre><p>则与gradle3.0.0之前的compile指令的效果完全一样，app的module也可以引用gson。这就是api和implementation的区别。</p>
+<h2 id="建议"><a href="#建议" class="headerlink" title="建议"></a>建议</h2><p>在Google IO 相关话题的中提到了一个建议，就是依赖首先应该设置为implementation的，如果没有错，那就用implementation，如果有错，那么使用api指令。使用implementation会使编译速度有所增快。</p>
+<p>provided（compileOnly）<br>只在编译时有效，不会参与打包<br>可以在自己的moudle中使用该方式依赖一些比如com.android.support，gson这些使用者常用的库，避免冲突。</p>
+<h2 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h2><h4 id="apk（runtimeOnly）"><a href="#apk（runtimeOnly）" class="headerlink" title="apk（runtimeOnly）"></a>apk（runtimeOnly）</h4><p>只在生成apk的时候参与打包，编译时不会参与，很少用。</p>
+<h4 id="testCompile（testImplementation）"><a href="#testCompile（testImplementation）" class="headerlink" title="testCompile（testImplementation）"></a>testCompile（testImplementation）</h4><p>testCompile 只在单元测试代码的编译以及最终打包测试apk时有效。</p>
+<h4 id="debugCompile（debugImplementation）"><a href="#debugCompile（debugImplementation）" class="headerlink" title="debugCompile（debugImplementation）"></a>debugCompile（debugImplementation）</h4><p>debugCompile 只在 debug 模式的编译和最终的 debug apk 打包时有效</p>
+<h4 id="releaseCompile（releaseImplementation）"><a href="#releaseCompile（releaseImplementation）" class="headerlink" title="releaseCompile（releaseImplementation）"></a>releaseCompile（releaseImplementation）</h4><p>Release compile仅仅针对 Release 模式的编译和最终的 Release apk 打包。</p>
+
+        </div>
+
+        <blockquote class="post-copyright">
+    <div class="content">
+        
+<span class="post-time">
+    最后更新时间：<time datetime="2018-04-03T03:22:41.718Z" itemprop="dateUpdated">2018-04-03 11:22:41</time>
+</span><br>
+
+
+        
+        原始链接：<a href="/post/f00095c8.html" target="_blank" rel="external">http://jkxy.club/post/f00095c8.html</a>
+        
+    </div>
+    <footer>
+        <a href="http://jkxy.club">
+            <img src="/img/avatar.jpg" alt="JKXY">
+            JKXY
+        </a>
+    </footer>
+</blockquote>
+
+        
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;" class="page-reward-btn waves-effect waves-circle waves-light">赏</a>
+</div>
+
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Android/">Android</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/f00095c8.html&title=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/f00095c8.html&title=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/f00095c8.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&url=http://jkxy.club/post/f00095c8.html&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/f00095c8.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/post/5acbcc97.html" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">软件开发模式对比(瀑布、迭代、螺旋、敏捷)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+    <!-- Valine Comments -->
+    <div class="comments vcomment" id="comments"></div>
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script>
+    <!-- Valine Comments script -->
+    <script>
+        var GUEST_INFO = ['nick','mail','link'];
+        var guest_info = 'nick,mail,link'.split(',').filter(function(item){
+          return GUEST_INFO.indexOf(item) > -1
+        });
+        new Valine({
+            el: '#comments',
+            notify: 'false' == 'true',
+            verify: 'false' == 'true',
+            appId: "j8im6Y6nmJuQcJagMJgc0XnN-gzGzoHsz",
+            appKey: "pvkgrRDEzKghfnOwdJ3iRlmj",
+            avatar: "mm",
+            placeholder: "Just go go",
+            guest_info: guest_info.length == 0 ? GUEST_INFO : guest_info,
+            pageSize: "10"
+        })
+    </script>
+    <!-- Valine Comments end -->
+
+
+
+
+</article>
+
+<div id="reward" class="page-modal reward-lay">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <h3 class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        谢谢大爷~
+        <i class="icon icon-quote-right"></i>
+    </h3>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/img/wechat.png" alt="打赏二维码">
+        </div>
+        
+        <label class="reward-toggle">
+            <input id="rewardToggle" type="checkbox" class="reward-toggle-check"
+                data-wechat="/img/wechat.png" data-alipay="/img/alipay.png">
+            <div class="reward-toggle-ctrol">
+                <span class="reward-toggle-item wechat">微信</span>
+                <span class="reward-toggle-label"></span>
+                <span class="reward-toggle-item alipay">支付宝</span>
+            </div>
+        </label>
+        
+    </div>
+</div>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>JKXY &copy; 2017 - 2018</span>
+            <span>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" style="font-weight: bold" target="_blank">indigo</a>
+				Hosted by <a href="https://pages.coding.me" style="font-weight: bold" target="_blank">Coding Pages</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://jkxy.club/post/f00095c8.html&title=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&pic=http://jkxy.club/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://jkxy.club/post/f00095c8.html&title=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&source=JKXY的个人博客" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://jkxy.club/post/f00095c8.html" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《android gradle 3.0.0 中依赖指令implementation、api 的区别》 — JKXY Blog&url=http://jkxy.club/post/f00095c8.html&via=http://jkxy.club" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://jkxy.club/post/f00095c8.html" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAAB0ElEQVR42u3aS4rDMBBFUe9/0w70qKFj+T5VSXbD1SgIRznOoFB9jgOv82eRz793/j5D9huWXLlyy9xzuK6OHj9/9QLj88mZcuXK3cklwYuEM/5K/AS5cuW+mVu5dZAAJ1eu3P/ITa815CXlypX7Zi65jsxdetLT2nI1uXLlFri9BdO5z4/Vd+XKlRsmLTyNIftnecmVK3cPd3w0KWfwkDT+Fi+UyJUrdzWXJDCkCMIbqHM3Gbly5e7k1ksS9XENEhYv/2O5cuUu46YjU+llKB35QuFPrly5y7iV8iVvh6SN28tfkStX7kbuXEqTllR4eQWlPXLlyl3GJYlKJaiR0+JgKleu3O1cPm5V2UnLJTcpkFy5chdz00sJSWP4d1HDVa5cuYu5aRKS/hNpmLtJseTKlbuFy1Md3mjhr0eKIGhmRK5cua3cOpRfdBpCm1y5cjdy6zg+kHGES65cuU9x+UqbMQ0tVV5blStXbhM3DShzxVN+Zqn5Kleu3FZu2ubkYxZ8LCPu/MiVK3cLlwevLvrchUmuXLlv4/LCaFf4+3KyXLlyX8klQYfs87KsXLlyn+LyQYq5QS7SekEDXnLlyt3CTQumlUYpD45y5cp9iPsBrH5N1F1QXY0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: true };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+</body>
+</html>
