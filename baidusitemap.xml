@@ -104,23 +104,6 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/e3fd73ec.html</loc>
-    <lastmod>2017-11-30T03:25:30.634Z</lastmod>
-    <data>
-        <display>
-        <title>Fresco中SimpleDraweeView的XML属性说明</title>
-        <pubTime>2017-06-26T08:00:30.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jkxy.club/post/b3792a9c.html</loc>
     <lastmod>2017-11-30T03:25:30.634Z</lastmod>
     <data>
@@ -138,29 +121,12 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/e0213c9c.html</loc>
-    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
+    <loc>http://jkxy.club/post/e3fd73ec.html</loc>
+    <lastmod>2017-11-30T03:25:30.634Z</lastmod>
     <data>
         <display>
-        <title>Android透明度对比图</title>
-        <pubTime>2017-05-25T02:09:33.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://jkxy.club/post/532ab633.html</loc>
-    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
-    <data>
-        <display>
-        <title>Android通过外网IP获取定位信息的几种方式</title>
-        <pubTime>2017-06-16T03:35:32.000Z</pubTime>
+        <title>Fresco中SimpleDraweeView的XML属性说明</title>
+        <pubTime>2017-06-26T08:00:30.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -189,16 +155,31 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/115198f6.html</loc>
-    <lastmod>2017-11-30T03:25:30.602Z</lastmod>
+    <loc>http://jkxy.club/post/532ab633.html</loc>
+    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
     <data>
         <display>
-        <title>Android设计模式之单例模式</title>
-        <pubTime>2017-05-22T08:22:39.000Z</pubTime>
+        <title>Android通过外网IP获取定位信息的几种方式</title>
+        <pubTime>2017-06-16T03:35:32.000Z</pubTime>
         
         <tag>Android</tag>
          
-        <tag>设计模式</tag>
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jkxy.club/post/e0213c9c.html</loc>
+    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
+    <data>
+        <display>
+        <title>Android透明度对比图</title>
+        <pubTime>2017-05-25T02:09:33.000Z</pubTime>
+        
+        <tag>Android</tag>
          
          
            
@@ -216,6 +197,25 @@
         <pubTime>2017-05-25T01:37:51.000Z</pubTime>
         
         <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jkxy.club/post/115198f6.html</loc>
+    <lastmod>2017-11-30T03:25:30.602Z</lastmod>
+    <data>
+        <display>
+        <title>Android设计模式之单例模式</title>
+        <pubTime>2017-05-22T08:22:39.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+        <tag>设计模式</tag>
          
          
            
