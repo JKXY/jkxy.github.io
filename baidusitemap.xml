@@ -5,7 +5,7 @@
     
   <url>
     <loc>http://jkxy.club/post/f00095c8.html</loc>
-    <lastmod>2018-04-03T03:22:41.718Z</lastmod>
+    <lastmod>2018-04-03T03:25:09.093Z</lastmod>
     <data>
         <display>
         <title>android gradle 3.0.0 中依赖指令implementation、api 的区别</title>
@@ -104,12 +104,12 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/b3792a9c.html</loc>
+    <loc>http://jkxy.club/post/e3fd73ec.html</loc>
     <lastmod>2017-11-30T03:25:30.634Z</lastmod>
     <data>
         <display>
-        <title>关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</title>
-        <pubTime>2017-07-19T13:08:11.000Z</pubTime>
+        <title>Fresco中SimpleDraweeView的XML属性说明</title>
+        <pubTime>2017-06-26T08:00:30.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -121,12 +121,12 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/e3fd73ec.html</loc>
+    <loc>http://jkxy.club/post/b3792a9c.html</loc>
     <lastmod>2017-11-30T03:25:30.634Z</lastmod>
     <data>
         <display>
-        <title>Fresco中SimpleDraweeView的XML属性说明</title>
-        <pubTime>2017-06-26T08:00:30.000Z</pubTime>
+        <title>关于CoordinatorLayout、AppBarLayout、CollapsingToolbarLayout</title>
+        <pubTime>2017-07-19T13:08:11.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -155,23 +155,6 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/8d1f962d.html</loc>
-    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
-    <data>
-        <display>
-        <title>Android 广告跳过</title>
-        <pubTime>2017-11-18T05:52:06.000Z</pubTime>
-        
-        <tag>Android</tag>
-         
-         
-           
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>http://jkxy.club/post/532ab633.html</loc>
     <lastmod>2017-11-30T03:25:30.618Z</lastmod>
     <data>
@@ -189,12 +172,12 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/f356c74.html</loc>
-    <lastmod>2017-11-30T03:25:30.602Z</lastmod>
+    <loc>http://jkxy.club/post/8d1f962d.html</loc>
+    <lastmod>2017-11-30T03:25:30.618Z</lastmod>
     <data>
         <display>
-        <title>Android通过WIFI连接真机调试</title>
-        <pubTime>2017-05-25T01:37:51.000Z</pubTime>
+        <title>Android 广告跳过</title>
+        <pubTime>2017-11-18T05:52:06.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -225,12 +208,12 @@
 
     
   <url>
-    <loc>http://jkxy.club/post/fe82999d.html</loc>
-    <lastmod>2017-11-30T03:25:30.587Z</lastmod>
+    <loc>http://jkxy.club/post/f356c74.html</loc>
+    <lastmod>2017-11-30T03:25:30.602Z</lastmod>
     <data>
         <display>
-        <title>Android APK反编译、重新打包</title>
-        <pubTime>2017-09-15T09:06:17.000Z</pubTime>
+        <title>Android通过WIFI连接真机调试</title>
+        <pubTime>2017-05-25T01:37:51.000Z</pubTime>
         
         <tag>Android</tag>
          
@@ -248,6 +231,23 @@
         <display>
         <title>Android中常用的特殊字符</title>
         <pubTime>2017-06-27T08:58:56.000Z</pubTime>
+        
+        <tag>Android</tag>
+         
+         
+           
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://jkxy.club/post/fe82999d.html</loc>
+    <lastmod>2017-11-30T03:25:30.587Z</lastmod>
+    <data>
+        <display>
+        <title>Android APK反编译、重新打包</title>
+        <pubTime>2017-09-15T09:06:17.000Z</pubTime>
         
         <tag>Android</tag>
          
